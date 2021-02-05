@@ -14,7 +14,7 @@ import retrofit2.http.Path;
 
 public interface OrderItemService {
 
-    String BASE_URL = "http://192.168.1.9:8080/";
+    String BASE_URL = "http://192.168.1.12:8080/";
 
     @GET("orderItems/cart/orderItem/{username}")
     Call<List<OrderItem>> getCartItems(@Path("username") String username);
