@@ -22,4 +22,15 @@
     <string name="gender_unknown">Unknown</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
+
+    <string-array name="spinnerSpecie">
+        <item>Chien</item>
+        <item>Chat</item>
+        <item>Poisson</item>
+        <item>Oiseau</item>
+        <item>Cheval</item>
+        <item>Lapin</item>
+        <item>Petits animaux</item>
+        <item>Autres...</item>
+    </string-array>
 </resources>

@@ -6,4 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".Activites.TestActivity">
 
+    <LinearLayout
+        android:id="@+id/mainFrag_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="top"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/menuFrag_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuFrag_container"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@id/mainFrag_container"
+        app:layout_constraintVertical_bias="100" >
+
+        <fragment
+            android:id="@+id/BottomBarFrag"
+            android:name="com.example.petines.petines.Fragments.BottomNavBarFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
