@@ -24,4 +24,8 @@
     <string name="gender_female">Female</string>
     <string name="Commandes">Mes Commandes</string>
     <string name="Valider">Valider</string>
+    <string name="adresse">Adresse</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="statut">Statut</string>
 </resources>
