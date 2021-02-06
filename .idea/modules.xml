@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Skeleton.petines-f.iml" filepath="$PROJECT_DIR$/.idea/modules/Skeleton.petines-f.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/petines-f.iml" filepath="$PROJECT_DIR$/.idea/petines-f.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/petines-f.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/petines-f.app.iml" />
     </modules>
