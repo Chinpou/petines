@@ -97,7 +97,11 @@ public class NavActivity extends AppCompatActivity {
                 startActivity(new Intent(NavActivity.this, EditorActivity.class));
             }
         });
+
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

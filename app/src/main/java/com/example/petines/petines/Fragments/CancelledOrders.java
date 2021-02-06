@@ -42,4 +42,8 @@ public class CancelledOrders extends Fragment {
         return view;
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Yassine-Zougagh
