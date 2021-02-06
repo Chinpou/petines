@@ -22,4 +22,6 @@
     <string name="gender_unknown">Unknown</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
+    <string name="Commandes">Mes Commandes</string>
+    <string name="Valider">Valider</string>
 </resources>

@@ -14,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Activites.TestActivity"></activity>
-        <activity android:name=".Activites.NavActivity"></activity>
+        <activity android:name=".Activites.Livraison"></activity>
+        <activity android:name=".Activites.Commander" />
+        <activity android:name=".Activites.TestActivity" />
+        <activity android:name=".Activites.NavActivity" />
         <!--
         <activity
             android:name=".Activites.TestActivity"
@@ -24,7 +26,7 @@
 
         </activity>
         -->
-        <activity android:name=".Activites.MainActivity"></activity>
+        <activity android:name=".Activites.MainActivity" />
         <activity android:name=".Activites.Registration" />
 
         <meta-data
@@ -50,7 +52,7 @@
         <activity
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
