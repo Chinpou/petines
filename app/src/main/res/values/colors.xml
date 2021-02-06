@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="colorPrimary">#6d1950	</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#008080</color>
+    -->
+    <color name="red">#008080</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey">#696969</color>
+
+    <color name="colorPrimary">#ff4800</color>
+    <color name="colorPrimaryDark">#dc4a10</color>
+    <color name="colorAccent">#009cfd</color>
+
+    <color name="colorPrimaryEditor">#009cfd</color>
+    <color name="colorPrimaryDarkEditor">#1284ca</color>
+    <color name="colorAccentEditor">#e24000</color>
+
+</resources>
