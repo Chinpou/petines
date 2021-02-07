@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.petines.petines.Activites.Commander;
+import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
@@ -37,6 +39,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         this.context = context;
         this.mListener = listener;
     }
+
+
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

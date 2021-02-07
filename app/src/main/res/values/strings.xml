@@ -22,4 +22,11 @@
     <string name="gender_unknown">Unknown</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
+    <string name="localisation">Localisation</string>
+    <string name="commander">Mes Commandes</string>
+    <string name="valider">Valider</string>
+    <string name="annonce">Annonce</string>
+    <string name="Date">Date</string>
+    <string name="statut">Statut</string>
+    <string name="description">Description</string>
 </resources>

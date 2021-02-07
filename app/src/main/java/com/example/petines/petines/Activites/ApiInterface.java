@@ -1,5 +1,6 @@
 package com.example.petines.petines.Activites;
 
+import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.Model.Product;
 import com.example.petines.petines.Model.User;
@@ -23,6 +24,8 @@ public interface ApiInterface {
 
     @GET("petties")
     Call<List<Pets>> getPets();
+    @GET("petties")
+    Call<List<Commande>> getCommande();
 
     @POST("petties")
     Call<Pets> insertPet(@Body Pets p);
