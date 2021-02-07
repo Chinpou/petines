@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.petines.petines">
+    package="com.example.petines.petines" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,9 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon">
-        <activity android:name=".Activites.TestActivity"></activity>
-        <activity android:name=".Activites.NavActivity"></activity>
+        tools:replace="android:icon" >
+        <activity
+            android:name=".Activites.homeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".Activites.TestActivity" />
+        <activity android:name=".Activites.NavActivity" />
         <!--
         <activity
             android:name=".Activites.TestActivity"
@@ -24,7 +29,7 @@
 
         </activity>
         -->
-        <activity android:name=".Activites.MainActivity"></activity>
+        <activity android:name=".Activites.MainActivity" />
         <activity android:name=".Activites.Registration" />
 
         <meta-data
@@ -40,7 +45,7 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example.petines.petines.Models" />
 
-        <activity android:name=".Fragments.SplashActivity">
+        <activity android:name=".Fragments.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,7 +55,7 @@
         <activity
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

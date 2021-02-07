@@ -1,4 +1,4 @@
-package com.example.petines.petines.Activites;
+package com.example.petines.petines.Fragments;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
+<!--
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/material_design_android_floating_action_menu"
             android:layout_width="wrap_content"
@@ -119,5 +119,7 @@
                 fab:fab_label="Logout"
                 fab:fab_size="normal" />
         </com.github.clans.fab.FloatingActionMenu>
+-->
+
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

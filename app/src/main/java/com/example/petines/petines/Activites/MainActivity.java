@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
                 selectedUser = response.body();
 
-
                 if(selectedUser.getPassword().equals(password))
                 {
                     //SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", MODE_PRIVATE);
@@ -87,8 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     //editor.putInt("id", selectedUser.getUid());
                     //editor.apply();
 
-
-                    Intent intent = new Intent(MainActivity.this, NavActivity.class);
+                    Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, "Welcome "+selectedUser.getUsername() + "!", Toast.LENGTH_LONG).show();
                 }
@@ -98,19 +96,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
     public void signup() {
-
         Intent intent=new Intent(MainActivity.this, Registration.class);
         startActivity(intent);
-
     }
 
     @Override
     public void onBackPressed() {
-
     }
 }

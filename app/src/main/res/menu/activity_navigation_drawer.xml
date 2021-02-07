@@ -6,11 +6,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_menu_slideshow"
             android:title="Home" />
+
+        <item
+            android:id="@+id/nav_mypets"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Pet ads" />
+
+        <item
+            android:id="@+id/nav_mywishlist"
+            android:icon="@drawable/ic_accesories"
+            android:title="My Wishlist" />
+
+        <item
+            android:id="@+id/nav_myorders"
+            android:icon="@drawable/ic_baseline_add_shopping_cart_24px"
+            android:title="My Orders" />
+
         <item
             android:id="@+id/nav_cancelled"
-            android:icon="@drawable/ic_baseline_announcement_24px"
+            android:icon="@drawable/ic_menu_share"
             android:title="Cancelled Orders" />
 
 
@@ -21,12 +37,17 @@
     <item android:title="Settings">
         <menu>
             <item
+                android:id="@+id/nav_manageAccount"
+                android:icon="@drawable/ic_baseline_local_shipping_24px"
+                android:title="Manage account" />
+
+            <item
                 android:id="@+id/nav_contactUs"
-                android:icon="@drawable/ic_baseline_announcement_24px"
+                android:icon="@drawable/ic_baseline_local_shipping_24px"
                 android:title="Contact Us" />
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/profilepic"
+                android:icon="@drawable/asd"
                 android:title="Logout" />
         </menu>
     </item>
