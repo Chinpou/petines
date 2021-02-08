@@ -1,12 +1,14 @@
 package com.example.petines.petines.Activites;
 
+import com.example.petines.petines.Adapters.BaseUrlAdapter;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 class ApiClient {
-
-    //private static final String BASE_URL = "http://192.168.8.102/demo_pets/";
-    private static final String BASE_URL = "http://192.168.1.47:8080/";
+//    BaseUrlAdapter adapterUrl= new BaseUrlAdapter();
+//    String adaptedUrl = adapterUrl.getBASE_URL();
+    private static final String BASE_URL = "http://192.168.1.14:8080";
 
     private static Retrofit retrofit;
 
@@ -17,9 +19,7 @@ class ApiClient {
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-
         }
         return retrofit;
     }
-
 }

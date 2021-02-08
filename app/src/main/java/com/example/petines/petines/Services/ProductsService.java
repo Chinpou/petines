@@ -1,5 +1,6 @@
 package com.example.petines.petines.Services;
 
+import com.example.petines.petines.Adapters.BaseUrlAdapter;
 import com.example.petines.petines.Model.OrderItem;
 import com.example.petines.petines.Model.Product;
 
@@ -14,7 +15,8 @@ import retrofit2.http.Path;
 
 public interface ProductsService {
 
-    String BASE_URL = "http://192.168.1.13:8080/";
+    BaseUrlAdapter adapterUrl= new BaseUrlAdapter();
+    String BASE_URL = adapterUrl.getBASE_URL();
 
     @GET("products")
     Call<List<Product>> getProducts();

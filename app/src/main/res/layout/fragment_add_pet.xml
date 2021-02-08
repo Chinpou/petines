@@ -10,6 +10,8 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:paddingRight="30dp"
         app:layout_constraintEnd_toStartOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="@+id/scrollView2">
@@ -171,48 +173,45 @@
             app:layout_constraintTop_toBottomOf="@+id/petBirth" />
 
         <RadioGroup
-            android:id="@+id/radioGroup2"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
+            android:id="@+id/radioGender"
+            android:layout_width="193dp"
+            android:orientation="horizontal"
+            android:layout_height="39dp"
             app:layout_constraintBottom_toBottomOf="@+id/petGender"
             app:layout_constraintEnd_toEndOf="@+id/editBirth"
             app:layout_constraintStart_toStartOf="@+id/editBirth"
             app:layout_constraintTop_toTopOf="@+id/petGender">
 
+            <RadioButton
+                android:id="@+id/radMale"
+                android:layout_marginEnd="14dp"
+                android:layout_width="73dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|fill"
+                android:text="Male"
+                android:layout_marginRight="14dp"/>
+
+            <RadioButton
+                android:id="@+id/radFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="fill|end"
+                android:gravity="start|center_vertical"
+                android:text="Female"/>
+
         </RadioGroup>
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="Female"
-            app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
-            app:layout_constraintEnd_toEndOf="@+id/radioGroup2"
-            app:layout_constraintStart_toEndOf="@+id/radioButton2"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup2" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="77dp"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            app:layout_constraintBottom_toBottomOf="@+id/radioGroup2"
-            app:layout_constraintStart_toStartOf="@+id/radioGroup2"
-            app:layout_constraintTop_toTopOf="@+id/radioGroup2" />
 
         <TextView
             android:id="@+id/petPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priced"
-            app:layout_constraintBottom_toBottomOf="@+id/switch1"
+            app:layout_constraintBottom_toBottomOf="@+id/switchPrice"
             app:layout_constraintStart_toStartOf="@+id/petImg"
-            app:layout_constraintTop_toTopOf="@+id/switch1" />
+            app:layout_constraintTop_toTopOf="@+id/switchPrice" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/switchPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -241,7 +240,7 @@
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="@+id/editBirth"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/switch1"
+            app:layout_constraintStart_toEndOf="@+id/switchPrice"
             app:layout_constraintTop_toBottomOf="@+id/editImage" />
 
         <Spinner
@@ -257,5 +256,6 @@
             app:layout_constraintStart_toEndOf="@+id/petSpecie"
             app:layout_constraintStart_toStartOf="@+id/editDesc"
             app:layout_constraintTop_toTopOf="@+id/petSpecie" />
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

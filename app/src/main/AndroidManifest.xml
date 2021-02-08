@@ -4,6 +4,8 @@
     package="com.example.petines.petines">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name="com.orm.SugarApp"
@@ -15,24 +17,38 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity android:name=".Activites.NavActivity">
+        </activity>
+
+
+        <activity
+            android:name=".Activites.TestActivity"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity
-            android:name=".Activites.TestActivity"
-            android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar">
+
+
+        <activity android:name=".Activites.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+
+        <activity android:name=".Activites.Registration" />
+        <activity android:name=".Activites.AddPetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activites.MainActivity"></activity>
-        <activity android:name=".Activites.Registration" />
-
         <meta-data
             android:name="DATABASE"
             android:value="sugarDaddy.db" />
@@ -46,13 +62,8 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example.petines.petines.Models" />
 
-        <activity android:name=".Fragments.SplashActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".Fragments.SplashActivity"/>
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
         <activity
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"

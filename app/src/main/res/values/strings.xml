@@ -22,7 +22,8 @@
     <string name="gender_unknown">Unknown</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
-<<<<<<< HEAD
+    <string name="genderF">Female</string>
+    <string name="genderM">Male</string>
 
     <string-array name="spinnerSpecie">
         <item>Chien</item>
@@ -34,6 +35,5 @@
         <item>Petits animaux</item>
         <item>Autres...</item>
     </string-array>
-=======
->>>>>>> origin/Yassine-Zougagh
+
 </resources>
