@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.petines.petines.Activites.NavActivity;
+import com.example.petines.petines.Activites.NavigationActivity;
 import com.example.petines.petines.Fragments.ApiClient;
 import com.example.petines.petines.Activites.ApiInterface;
 import com.example.petines.petines.Adapters.Adapter;
@@ -29,6 +30,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static java.lang.Boolean.TRUE;
 
 public class Home2Fragment extends Fragment {
 
@@ -114,36 +117,6 @@ public class Home2Fragment extends Fragment {
 
     }
 
-    public void updateLove(final String key, final int id, final Boolean love){
-/*
-        Call<Pets> call = apiInterface.updateLove(key, id, love);
-
-        call.enqueue(new Callback<Pets>() {
-            @Override
-            public void onResponse(Call<Pets> call, Response<Pets> response) {
-
-                Log.i(NavActivity.class.getSimpleName(), "Response "+response.toString());
-
-                String value = response.body().getValue();
-                String message = response.body().getMassage();
-
-                if (value.equals("1")){
-                    Toast.makeText(NavActivity.this, message, Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(NavActivity.this, message, Toast.LENGTH_SHORT).show();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<Pets> call, Throwable t) {
-                Toast.makeText(NavActivity.this, t.getMessage().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
- */
-    }
-
     public void getPets(){
         Call<List<Pets>> call = apiInterface.getPets();
         call.enqueue(new Callback<List<Pets>>() {
@@ -170,4 +143,33 @@ public class Home2Fragment extends Fragment {
         super.onResume();
         getPets();
     }
+
+    public void updateLove(final String key, final int id, final Boolean love){
+
+        Call<Pets> call = apiInterface.updateLove(id, love);
+
+        call.enqueue(new Callback<Pets>() {
+            @Override
+            public void onResponse(Call<Pets> call, Response<Pets> response) {
+
+                Log.i("TAG", "Response "+response.toString());
+
+                Pets pet1 = response.body();
+                Log.i("TAG", response.body().toString());
+
+                if (pet1.getLove() == TRUE){
+                    Toast.makeText(getContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Love FALSE", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Pets> call, Throwable t) {
+                Toast.makeText(getContext(), t.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

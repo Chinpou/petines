@@ -24,6 +24,9 @@ public interface ApiInterface {
     @GET("petties")
     Call<List<Pets>> getPets();
 
+    @GET("petties/{username}")
+    Call<List<Pets>> getMyPetWhishList(@Path("username") String username);
+
     @POST("petties")
     Call<Pets> insertPet(@Body Pets p);
 
@@ -34,6 +37,15 @@ public interface ApiInterface {
     @DELETE("petties/delete/{Id}")
     Call<Pets> deletePet(
             @Path("id") int Id);
+
+
+    @POST("/petties/updateLove/{Id}")
+    Call<Pets> updateLove(
+            @Path("Id") int Id,
+            @Body boolean love);
+
+
+
 
 /*
     @GET("pets/{petsId}")

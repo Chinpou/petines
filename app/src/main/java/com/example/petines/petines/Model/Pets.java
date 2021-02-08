@@ -22,8 +22,8 @@ public class Pets {
     private Boolean love;
     @SerializedName("value")
     private String value;
-    @SerializedName("message")
-    private String massage;
+    @SerializedName("description")
+    private String description;
 
     public Pets(String name, String species, String breed, int gender, String birth, String picture) {
         this.name = name;
@@ -32,6 +32,15 @@ public class Pets {
         this.gender = gender;
         this.birth = birth;
         this.picture = picture;
+    }
+    public Pets(String name, String species, String breed, int gender, String birth, String picture, String description) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.gender = gender;
+        this.birth = birth;
+        this.picture = picture;
+        this.description = description;
     }
 
     public int getId() {
@@ -106,11 +115,11 @@ public class Pets {
         this.value = value;
     }
 
-    public String getMassage() {
-        return massage;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMassage(String massage) {
-        this.massage = massage;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
