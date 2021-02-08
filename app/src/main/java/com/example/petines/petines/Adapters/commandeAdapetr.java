@@ -19,6 +19,7 @@ import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +46,12 @@ public class commandeAdapetr extends RecyclerView.Adapter<Adapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(Adapter.MyViewHolder holder, int position) {
-        holder.mName.setText(petsCommande.get(position).getName());
-        holder.mDate.setText(petsCommande.get(position).getBirth());
+    public void onBindViewHolder( final MyViewHolder holder, int position) {
+        holder.mName.setText(petsCommande.get(position).getPet());
+        holder.mDate.setText(petsCommande.get(position).getDate());
+        holder.mDescription.setText(petsCommande.get(position).getDescription());
+        holder.mStatuts.setText(petsCommande.get(position).getStatus());
+
 
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.skipMemoryCache(true);
@@ -56,11 +60,38 @@ public class commandeAdapetr extends RecyclerView.Adapter<Adapter.MyViewHolder> 
         requestOptions.error(R.drawable.logo);
 
         Glide.with(context)
-                .load(pets.get(position).getPicture())
+                .load(petsCommande.get(position).getPicture())
                 .apply(requestOptions)
                 .into(holder.mPicture);
 
     }
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+
+
+
+
+
+        private Adapter.RecyclerViewClickListener mListener;
+        private CircleImageView mPicture;
+        private TextView mStatuts;
+        private ImageView mLove;
+        private TextView mName, mType, mDate, mDescription;
+        private RelativeLayout mRowContainer;
+
+        public MyViewHolder(View itemView, Adapter.RecyclerViewClickListener listener) {
+            super(itemView);
+            mPicture = itemView.findViewById(R.id.imgPetCommande);
+            mName = itemView.findViewById(R.id.annonce);
+            mDate = itemView.findViewById(R.id.date);
+            mDescription = itemView.findViewById(R.id.description);
+            mStatuts = itemView.findViewById(R.id.statut);
+
+
+            mListener = listener;
+            mRowContainer.setOnClickListener(this);
+
+        }
 
     @Override
     public int getItemCount() {
@@ -72,7 +103,12 @@ public class commandeAdapetr extends RecyclerView.Adapter<Adapter.MyViewHolder> 
         return null;
     }
 
-    public abstract static class RecyclerViewClickListener {
+        @Override
+        public void onClick(View view) {
+
+        }
+
+        public abstract static class RecyclerViewClickListener {
         public abstract void onRowClick(View view, int position);
 
         public abstract void onLoveClick(View view, int position);

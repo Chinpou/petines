@@ -15,9 +15,11 @@ public class Commande {
         private Integer pet_id;*/
 
     private String status;
+    private String description;
 
 
     private String date;
+    private Integer Picture;
 
 
     private String location;
@@ -25,9 +27,19 @@ public class Commande {
     public Integer getId() {
         return id;
     }
+    public Integer getPicture(){ return Picture;}
+
+    public void setPicture(Integer picture) {
+        Picture = picture;
+    }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    public String getDescription() { return description;}
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public User getUser() {
@@ -38,7 +50,7 @@ public class Commande {
         this.user = user;
     }
 
-    public Pets getPet() {
+    public CharSequence getPet() {
         return pet;
     }
 
