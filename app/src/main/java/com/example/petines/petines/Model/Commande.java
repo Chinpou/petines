@@ -51,7 +51,7 @@ public class Commande {
     }
 
     public CharSequence getPet() {
-        return pet;
+        return (CharSequence) pet;
     }
 
     public void setPet(Pets pet) {
@@ -113,4 +113,6 @@ public class Commande {
         this.location = location;
     }
 
+    public class MyViewHolder {
+    }
 }

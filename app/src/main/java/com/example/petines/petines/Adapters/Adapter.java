@@ -94,7 +94,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         return filter;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private RecyclerViewClickListener mListener;
         private CircleImageView mPicture;

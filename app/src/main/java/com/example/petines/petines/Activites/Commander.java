@@ -8,11 +8,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Filter;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+
 import com.example.petines.petines.Adapters.Adapter;
-import com.example.petines.petines.Adapters.commandeAdapetr;
+import com.example.petines.petines.Adapters.CommandeAdapter;
 import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.R;
 
@@ -26,10 +28,10 @@ import retrofit2.Response;
 public class Commander extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
-    private commandeAdapetr adapter;
+    private CommandeAdapter adapter;
     private List<Commande> commandePets;
     ApiInterface apiInterface;
-    commandeAdapetr.RecyclerViewClickListener listener;
+    CommandeAdapter.RecyclerViewClickListener listener;
     ProgressBar progressBar;
 
 
@@ -44,10 +46,10 @@ public class Commander extends AppCompatActivity {
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        listener = new commandeAdapetr.RecyclerViewClickListener() {
+        listener = new CommandeAdapter.RecyclerViewClickListener() {
 
             @Override
-            public void onRowClick(View view, int position) {
+            public void onRowClick(View view, final int position) {
                 Intent intent = new Intent(Commander.this, EditorActivity.class);
                 intent.putExtra("id", commandePets.get(position).getId());
                 intent.putExtra("Date", commandePets.get(position).getDate());
@@ -60,11 +62,9 @@ public class Commander extends AppCompatActivity {
 
             @Override
             public void onLoveClick(View view, int position) {
-                final int id = commandePets.get(position).getId();
-                final String statut = commandePets.get(position).getStatus();
-                //final ImageView mLove = view.findViewById(R.id.love);
 
             }
+
 
         };
 
@@ -86,8 +86,23 @@ public class Commander extends AppCompatActivity {
             public void onResponse(Call<List<Commande>> call, Response<List<Commande>> response) {
                 progressBar.setVisibility(View.GONE);
                 commandePets = response.body();
-                Log.i(NavActivity.class.getSimpleName(), response.body().toString());
-                adapter = new commandeAdapetr(commandePets, Commander.this, listener);
+                Log.i(Commander.class.getSimpleName(), response.body().toString());
+                adapter = new CommandeAdapter(commandePets, Commander.this, listener) {
+                    @Override
+                    public void onBindViewHolder(Adapter.MyViewHolder holder, int position) {
+
+                    }
+
+                    @Override
+                    public int getItemCount() {
+                        return 0;
+                    }
+
+                    @Override
+                    public Filter getFilter() {
+                        return null;
+                    }
+                };
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
