@@ -31,6 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class Home2Fragment extends Fragment {
@@ -84,6 +85,8 @@ public class Home2Fragment extends Fragment {
                 final ImageView mLove = view.findViewById(R.id.love);
 
                 if (love){
+                    Toast.makeText(getContext(), "making love off",
+                            Toast.LENGTH_SHORT).show();
                     mLove.setImageResource(R.drawable.likeof);
                     petsList.get(position).setLove(false);
                     updateLove("update_love", id, false);
@@ -159,7 +162,7 @@ public class Home2Fragment extends Fragment {
 
                 if (pet1.getLove() == TRUE){
                     Toast.makeText(getContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
-                } else {
+                } else if (pet1.getLove() == FALSE){
                     Toast.makeText(getContext(), "Love FALSE", Toast.LENGTH_SHORT).show();
                 }
 

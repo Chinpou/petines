@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.petines.petines.Adapters.Adapter;
+import com.example.petines.petines.Fragments.FavouritesFragment;
 import com.example.petines.petines.Fragments.Home2Fragment;
 import com.example.petines.petines.R;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,7 @@ public class NavigationActivity extends AppCompatActivity
     Adapter adapter;
     Adapter.RecyclerViewClickListener listener;
     SharedPreferences sharedPreferences;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class NavigationActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        String username =  intent.getStringExtra("username");
+        username =  intent.getStringExtra("username");
 
         Fragment fragment = new Home2Fragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -136,7 +138,14 @@ public class NavigationActivity extends AppCompatActivity
         if (id == R.id.nav_mypets) {
         }
         if (id == R.id.nav_mywishlist) {
-
+            Fragment fragment = new FavouritesFragment();
+            Bundle bdl = new Bundle(4);
+            bdl.putString("username", username);
+            fragment.setArguments(bdl);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
         if (id == R.id.nav_myorders) {
         }

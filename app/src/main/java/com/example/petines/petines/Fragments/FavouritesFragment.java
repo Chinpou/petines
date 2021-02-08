@@ -36,6 +36,7 @@ package com.example.petines.petines.Fragments;
 
 public class FavouritesFragment extends Fragment {
 
+
     String id;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
@@ -44,11 +45,15 @@ public class FavouritesFragment extends Fragment {
     ApiInterface apiInterface;
     Adapter.RecyclerViewClickListener listener;
     ProgressBar progressBar;
+    String username;
 
      @Nullable
      @Override
      public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+
+         final Bundle bdl = getArguments();
+         username = bdl.getString("username");
 
          inflater = LayoutInflater.from(getContext());
          final View view = inflater.inflate(R.layout.activity_home2, container, false);
@@ -123,14 +128,14 @@ public class FavouritesFragment extends Fragment {
 
      }
 
-    public void getPets(String username){
+    public void getMyPetWhishList(String username){
         Call<List<Pets>> call = apiInterface.getMyPetWhishList(username);
         call.enqueue(new Callback<List<Pets>>() {
             @Override
             public void onResponse(Call<List<Pets>> call, Response<List<Pets>> response) {
                 progressBar.setVisibility(View.GONE);
                 petsList = response.body();
-                Log.i(NavActivity.class.getSimpleName(), response.body().toString());
+                Log.i("Taaaaag", response.body().toString());
                 adapter = new Adapter(petsList, getContext(), listener);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
@@ -147,7 +152,7 @@ public class FavouritesFragment extends Fragment {
 
     public void onResume() {
         super.onResume();
-        f
+        getMyPetWhishList(this.username);
     }
 
     public void updateLove(final String key, final int id, final Boolean love){

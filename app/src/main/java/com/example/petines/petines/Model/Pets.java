@@ -25,6 +25,8 @@ public class Pets {
     @SerializedName("description")
     private String description;
 
+    private User user;
+
     public Pets(String name, String species, String breed, int gender, String birth, String picture) {
         this.name = name;
         this.species = species;
@@ -41,6 +43,17 @@ public class Pets {
         this.birth = birth;
         this.picture = picture;
         this.description = description;
+    }
+
+    public Pets(String name, String species, String breed, int gender, String birth, String picture, String description, User user) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.gender = gender;
+        this.birth = birth;
+        this.picture = picture;
+        this.description = description;
+        this.user = user;
     }
 
     public int getId() {
@@ -107,19 +120,19 @@ public class Pets {
         this.love = love;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
