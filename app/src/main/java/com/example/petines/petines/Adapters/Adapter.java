@@ -40,7 +40,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         this.mListener = listener;
     }
 
-
+    public Adapter(List<Commande> commandePets, Commander context, RecyclerViewClickListener listener) {
+    }
 
 
     @Override

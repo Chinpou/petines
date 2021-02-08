@@ -40,11 +40,25 @@ public class commandeAdapetr extends RecyclerView.Adapter<Adapter.MyViewHolder> 
 
     @Override
     public Adapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.petscommandes, parent, false);
         return null;
     }
 
     @Override
     public void onBindViewHolder(Adapter.MyViewHolder holder, int position) {
+        holder.mName.setText(petsCommande.get(position).getName());
+        holder.mDate.setText(petsCommande.get(position).getBirth());
+
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.skipMemoryCache(true);
+        requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE);
+        requestOptions.placeholder(R.drawable.logo);
+        requestOptions.error(R.drawable.logo);
+
+        Glide.with(context)
+                .load(pets.get(position).getPicture())
+                .apply(requestOptions)
+                .into(holder.mPicture);
 
     }
 
