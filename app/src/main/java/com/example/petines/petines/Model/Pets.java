@@ -52,7 +52,7 @@ public class Pets {
         this.birth = null;
         this.picture = picture;
         this.love = false;
-        this.description = "description";
+        this.description = description;
         this.lat = null;
         this.lon = null;
         this.uid = null;
