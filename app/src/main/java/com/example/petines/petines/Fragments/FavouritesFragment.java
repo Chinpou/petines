@@ -97,6 +97,8 @@ public class FavouritesFragment extends Fragment {
                  if (love){
                      mLove.setImageResource(R.drawable.likeof);
                      petsList.get(position).setLove(false);
+                     Toast.makeText(getContext(), "making off",
+                             Toast.LENGTH_SHORT).show();
                      updateLove("update_love", id, false);
                      adapter.notifyDataSetChanged();
                  } else {
@@ -155,7 +157,7 @@ public class FavouritesFragment extends Fragment {
         getMyPetWhishList(this.username);
     }
 
-    public void updateLove(final String key, final int id, final Boolean love){
+    public void updateLove(final String key, final int id, Boolean love){
 
         Call<Pets> call = apiInterface.updateLove(id, love);
 

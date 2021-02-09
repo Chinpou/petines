@@ -44,8 +44,9 @@ public interface ApiInterface {
             @Path("Id") int Id,
             @Body boolean love);
 
-
-
+    @GET("/petties/petty/Id}")
+    Call<Pets> getPetById(
+            @Path("Id") int Id);
 
 /*
     @GET("pets/{petsId}")
