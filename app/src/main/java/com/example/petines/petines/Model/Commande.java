@@ -100,9 +100,6 @@ public class Commande {
     // location => lat + long (2 columns)
 
 
-    public Commande() {
-    }
-
     public Commande(User user, Pets pet, String status, String date, String location) {
         /*this.user_id = user;
         this.pet_id = pet;*/
@@ -113,6 +110,5 @@ public class Commande {
         this.location = location;
     }
 
-    public class MyViewHolder {
-    }
+
 }
