@@ -25,7 +25,7 @@ public class Test2Activity extends AppCompatActivity {
     ApiInterface apiInterface;
     String contactNumber;
     int id;
-    TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet;
+    TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
 
 
     @Override
@@ -45,21 +45,19 @@ public class Test2Activity extends AppCompatActivity {
         GenderPet = (TextView)findViewById(R.id.GenderPet);
         BirthPet = (TextView)findViewById(R.id.BirthPet);
         petDescription = (TextView)findViewById(R.id.petDescription);
+        ContactNumberPet = (TextView)findViewById(R.id.ContactNumberPet);
+        EmailPet = (TextView)findViewById(R.id.EmailPet);
 
 
         Intent intent = getIntent();
-        //id = intent.getIntExtra("id", 0);
-
         namePet.setText(intent.getStringExtra("name"));
         speciesPet.setText(intent.getStringExtra("species"));
         GenderPet.setText(intent.getStringExtra("gender"));
         BirthPet.setText(intent.getStringExtra("birth"));
         breedPet.setText(intent.getStringExtra("breed"));
         petDescription.setText(intent.getStringExtra("description"));
-
-        //textview4.setText(name);
-        //textview5.setText(species);
-
+        ContactNumberPet.setText(intent.getStringExtra("contactNumber"));
+        EmailPet.setText(intent.getStringExtra("EmailPet"));
 
     }
 }

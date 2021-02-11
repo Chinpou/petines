@@ -98,6 +98,8 @@ public class Home2Fragment extends Fragment {
                 intent.putExtra("picture", petsList.get(position).getPicture());
                 intent.putExtra("gender", petsList.get(position).getGender());
                 intent.putExtra("description",petsList.get(position).getDescription());
+                intent.putExtra("contactNumber",petsList.get(position).getUser().getContactNumber());
+                intent.putExtra("EmailPet",petsList.get(position).getUser().getEmailAddress());
                 startActivity(intent);
             }
 
