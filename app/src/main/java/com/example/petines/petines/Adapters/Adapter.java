@@ -52,6 +52,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         holder.mType.setText(pets.get(position).getBreed() + " / "
                 + pets.get(position).getSpecies());
         holder.mDate.setText(pets.get(position).getBirth());
+        //holder.mPicture.setImageResource(Integer.getInteger(pets.get(position).getPicture()));
 
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.skipMemoryCache(true);

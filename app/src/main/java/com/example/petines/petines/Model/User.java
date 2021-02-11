@@ -13,7 +13,6 @@ public class  User  {
     private String residentAddress;
     private String contactNumber;
     private List<Order> orders;
-    private List<OrderItem> orderItems;
     private String profileimg;
 
 
@@ -30,7 +29,7 @@ public class  User  {
         this.profileimg = profileimg;
     }
 
-    public User(int id, String username, String password, String emailAddress, String firstName, String residentAddress, String contactNumber, List<Order> orders, List<OrderItem> orderItems) {
+    public User(int id, String username, String password, String emailAddress, String firstName, String residentAddress, String contactNumber, List<Order> orders) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -39,7 +38,6 @@ public class  User  {
         this.residentAddress = residentAddress;
         this.contactNumber = contactNumber;
         this.orders = orders;
-        this.orderItems = orderItems;
     }
 
     public String getProfileimg() {
@@ -65,15 +63,6 @@ public class  User  {
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
-
-    public List<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<OrderItem> orderItems) {
-        this.orderItems = orderItems;
-    }
-
 
     public String getUsername() {
         return username;

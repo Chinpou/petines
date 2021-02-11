@@ -20,6 +20,7 @@
         android:src="@drawable/profilepic" />
 
     <TextView
+        android:id="@+id/welcomeUserTextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"

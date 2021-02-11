@@ -1,5 +1,6 @@
 package com.example.petines.petines.Services;
 
+import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.Model.User;
 
 import java.util.List;
@@ -27,4 +28,9 @@ public interface UserService {
 
     @PUT("/users/{username}")
     Call<User> updateUser(@Path("username") String username, @Body User user );
+
+    @POST("petties/add")
+    Call<Pets> insertPet(@Body Pets p);
+
+
 }

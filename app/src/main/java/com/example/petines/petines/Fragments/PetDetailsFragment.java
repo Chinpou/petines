@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petines.petines.Activites.ApiInterface;
-import com.example.petines.petines.Activites.NavActivity;
+import com.example.petines.petines.Activites.NavigationActivity;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 import retrofit2.Call;
@@ -68,7 +68,7 @@ public class PetDetailsFragment extends Fragment {
             public void onResponse(Call<Pets> call, Response<Pets> response) {
                 //progressBar.setVisibility(View.GONE);
                 Pets pet = response.body();
-                Log.i(NavActivity.class.getSimpleName(), response.body().toString());
+                Log.i(NavigationActivity.class.getSimpleName(), response.body().toString());
                 namePet.setText(pet.getName());
                 speciesPet.setText(pet.getSpecies());
                 breedPet.setText(pet.getBreed());

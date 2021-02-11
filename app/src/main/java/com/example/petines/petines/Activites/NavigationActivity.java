@@ -19,16 +19,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.petines.petines.Fragments.ManageAccountFragment;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String uid;
-    Bundle bundle;
-    Adapter adapter;
-    Adapter.RecyclerViewClickListener listener;
-    SharedPreferences sharedPreferences;
+    //SharedPreferences sharedPreferences;
     String username;
+    TextView welcomeUserTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +42,14 @@ public class NavigationActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
+        //welcomeUserTextview = (TextView)findViewById(R.id.welcomeUserTextview);
+
         Intent intent = getIntent();
-        username =  intent.getStringExtra("username");
+        username = intent.getStringExtra("username");
+        uid = intent.getStringExtra("user_id");
+
+        //welcomeUserTextview.setText("Welcome "+ username);
+
 
         Fragment fragment = new Home2Fragment();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -78,6 +89,22 @@ public class NavigationActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+
+
+        View header_view = navigationView.getHeaderView(0);
+        TextView user_name_text_view = header_view.findViewById(R.id.welcomeUserTextview);
+        TextView user_id = header_view.findViewById(R.id.textView);
+
+        //CircleImageView profile_img = header_view.findViewById(R.id.imageView);
+
+        user_name_text_view.setText("Welcome "+ username);
+        user_id.setText("User ID : "+ uid);
+
+        //Picasso.get().load(Prevalent.online_user.getImage()).placeholder(R.drawable.profile).into(profile_img);
     }
 
 
@@ -136,6 +163,9 @@ public class NavigationActivity extends AppCompatActivity
             ft.commit();
         }
         if (id == R.id.nav_mypets) {
+            Intent intent = new Intent(getApplicationContext(), AddActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
         }
         if (id == R.id.nav_mywishlist) {
             Fragment fragment = new FavouritesFragment();
@@ -150,17 +180,13 @@ public class NavigationActivity extends AppCompatActivity
         if (id == R.id.nav_myorders) {
         }
         if (id == R.id.nav_contactUs) {
-
         }
         if (id == R.id.nav_logout) {
             /*
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
-            finish();
-
              */
         }
-
         displaySettingsScreen(id);
         return true;
     }

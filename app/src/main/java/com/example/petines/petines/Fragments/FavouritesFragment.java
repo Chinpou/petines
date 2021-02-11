@@ -20,7 +20,7 @@ package com.example.petines.petines.Fragments;
  import android.widget.Toast;
 
  import com.example.petines.petines.Activites.ApiInterface;
- import com.example.petines.petines.Activites.NavActivity;
+ //import com.example.petines.petines.Activites.NavActivity;
  import com.example.petines.petines.Adapters.Adapter;
  import com.example.petines.petines.Model.Pets;
  import com.example.petines.petines.R;
@@ -58,7 +58,7 @@ public class FavouritesFragment extends Fragment {
          inflater = LayoutInflater.from(getContext());
          final View view = inflater.inflate(R.layout.activity_home2, container, false);
          getActivity().setTitle("WishList");
-         inflater = LayoutInflater.from(getContext());
+         //inflater = LayoutInflater.from(getContext());
 
          apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
@@ -72,7 +72,7 @@ public class FavouritesFragment extends Fragment {
          listener = new Adapter.RecyclerViewClickListener() {
              @Override
              public void onRowClick(View view, final int position) {
-
+/*
                  GridviewItemFragment f = new GridviewItemFragment();
 
                  String name = petsList.get(position).getName();
@@ -85,6 +85,8 @@ public class FavouritesFragment extends Fragment {
                  ft.replace(R.id.fragment_container, f);
                  ft.addToBackStack(null);
                  ft.commit();
+
+ */
              }
 
              @Override
@@ -113,19 +115,7 @@ public class FavouritesFragment extends Fragment {
 
 
          FloatingActionButton fab = view.findViewById(R.id.fab);
-
-         fab.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-
-                 GridviewItemFragment f = new GridviewItemFragment();
-                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                 ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
-                 ft.replace(R.id.fragment_container, f);
-                 ft.addToBackStack(null);
-                 ft.commit();
-             }
-         });
+         fab.setVisibility(View.INVISIBLE);
          return view;
 
      }

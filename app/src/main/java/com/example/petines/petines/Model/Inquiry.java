@@ -8,7 +8,7 @@ public class Inquiry {
      private String date;
 
 
-    Product prod_id;
+    Pets pet_id;
 
 
     User user;
@@ -37,12 +37,12 @@ public class Inquiry {
         this.date = date;
     }
 
-    public Product getProd_id() {
-        return prod_id;
+    public Pets getPet_id() {
+        return pet_id;
     }
 
-    public void setProd_id(Product prod_id) {
-        this.prod_id = prod_id;
+    public void setPet_id(Pets pet_id) {
+        this.pet_id = pet_id;
     }
 
     public User getUser() {

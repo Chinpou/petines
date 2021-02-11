@@ -60,7 +60,7 @@ public class PetDetailsActivity extends AppCompatActivity {
             public void onResponse(Call<Pets> call, Response<Pets> response) {
                 //progressBar.setVisibility(View.GONE);
                 Pets pet = response.body();
-                Log.i(NavActivity.class.getSimpleName(), response.body().toString());
+                Log.i(NavigationActivity.class.getSimpleName(), response.body().toString());
                 namePet.setText(pet.getName());
                 speciesPet.setText(pet.getSpecies());
                 breedPet.setText(pet.getBreed());

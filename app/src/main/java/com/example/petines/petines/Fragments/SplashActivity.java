@@ -10,8 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.petines.petines.Activites.MainActivity;
-import com.example.petines.petines.Activites.NavActivity;
-//import com.example.petines.petines.Activites.NavigationActivity;
+import com.example.petines.petines.Activites.NavigationActivity;
 import com.example.petines.petines.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -42,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Intent intent = new Intent(SplashActivity.this, NavActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, NavigationActivity.class);
                     startActivity(intent);
                 }
 

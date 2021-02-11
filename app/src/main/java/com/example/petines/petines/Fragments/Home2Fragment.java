@@ -5,25 +5,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.petines.petines.Activites.EditorActivity;
-import com.example.petines.petines.Activites.MainActivity;
-import com.example.petines.petines.Activites.NavActivity;
+import com.example.petines.petines.Activites.AddActivity;
 import com.example.petines.petines.Activites.NavigationActivity;
-import com.example.petines.petines.Activites.PetDetailsActivity;
 import com.example.petines.petines.Activites.Test2Activity;
-import com.example.petines.petines.Fragments.ApiClient;
 import com.example.petines.petines.Activites.ApiInterface;
 import com.example.petines.petines.Adapters.Adapter;
 import com.example.petines.petines.Model.Pets;
@@ -35,7 +29,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class Home2Fragment extends Fragment {
@@ -96,7 +89,6 @@ public class Home2Fragment extends Fragment {
                 ft.commit();
 
  */
-
                 Intent intent = new Intent(getActivity(), Test2Activity.class);
                 intent.putExtra("id", petsList.get(position).getId());
                 intent.putExtra("name", petsList.get(position).getName());
@@ -139,13 +131,28 @@ public class Home2Fragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+/*
                 GridviewItemFragment f = new GridviewItemFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left);
                 ft.replace(R.id.fragment_container, f);
                 ft.addToBackStack(null);
                 ft.commit();
+
+ */
+                Intent intent = new Intent(getActivity(), AddActivity.class);
+                /*
+                intent.putExtra("id", petsList.get(position).getId());
+                intent.putExtra("name", petsList.get(position).getName());
+                intent.putExtra("species", petsList.get(position).getSpecies());
+                intent.putExtra("breed", petsList.get(position).getBreed());
+                intent.putExtra("birth", petsList.get(position).getBirth());
+                intent.putExtra("picture", petsList.get(position).getPicture());
+                intent.putExtra("gender", petsList.get(position).getGender());
+                intent.putExtra("description",petsList.get(position).getDescription());
+
+                 */
+                startActivity(intent);
             }
         });
         return view;
@@ -159,7 +166,7 @@ public class Home2Fragment extends Fragment {
             public void onResponse(Call<List<Pets>> call, Response<List<Pets>> response) {
                 progressBar.setVisibility(View.GONE);
                 petsList = response.body();
-                Log.i(NavActivity.class.getSimpleName(), response.body().toString());
+                Log.i(NavigationActivity.class.getSimpleName(), response.body().toString());
                 adapter = new Adapter(petsList, getContext(), listener);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
@@ -194,7 +201,7 @@ public class Home2Fragment extends Fragment {
 
                 if (pet1.getLove() == TRUE){
                     Toast.makeText(getContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
-                } else if (pet1.getLove() == FALSE){
+                } else{
                     Toast.makeText(getContext(), "Love FALSE", Toast.LENGTH_SHORT).show();
                 }
 

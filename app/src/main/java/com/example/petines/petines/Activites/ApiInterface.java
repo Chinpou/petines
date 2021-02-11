@@ -1,25 +1,21 @@
 package com.example.petines.petines.Activites;
 
 import com.example.petines.petines.Model.Pets;
-import com.example.petines.petines.Model.Product;
-import com.example.petines.petines.Model.User;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ApiInterface {
-/*
-    @POST("get_pets.php")
-    Call<List<Pets>> getPets();
- */
 
     @GET("petties")
     Call<List<Pets>> getPets();
@@ -27,8 +23,9 @@ public interface ApiInterface {
     @GET("petties/{username}")
     Call<List<Pets>> getMyPetWhishList(@Path("username") String username);
 
-    @POST("petties")
+    @POST("petties/add")
     Call<Pets> insertPet(@Body Pets p);
+
 
     @POST("petties/{Id}")
     Call<Pets> updatePet(
@@ -48,10 +45,15 @@ public interface ApiInterface {
     Call<Pets> getPetById(
             @Path("Id") int Id);
 
+    @Multipart
+    @POST("uploadPictures")
+    Call<ResponseBody> uploadPictures(
+            @Part MultipartBody.Part file1,
+            @Part MultipartBody.Part file2);
+
 /*
     @GET("pets/{petsId}")
     Call<Pets> getPet(@Path("petsId") int petsId);
-
  */
 
 /*

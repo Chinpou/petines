@@ -47,7 +47,7 @@ public class TabMain extends Fragment {
             @Override
             public void onClick(View v) {
                 String searchResult=searchBar.getText().toString();
-                Fragment fragment = new HomeFragment();
+                Fragment fragment = new Home2Fragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 Bundle bundle=new Bundle();
                 bundle.putString("type", searchResult);
@@ -65,7 +65,7 @@ public class TabMain extends Fragment {
                 String category="Men";
                 Bundle bundle=new Bundle();
                 bundle.putString("type", category);
-                Fragment fragment = new HomeFragment();
+                Fragment fragment = new Home2Fragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fragment.setArguments(bundle);
@@ -83,7 +83,7 @@ public class TabMain extends Fragment {
                 Bundle bundle=new Bundle();
                 bundle.putString("type", category);
 
-                Fragment fragment = new HomeFragment();
+                Fragment fragment = new Home2Fragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fragment.setArguments(bundle);
@@ -101,7 +101,7 @@ public class TabMain extends Fragment {
                 Bundle bundle=new Bundle();
                 bundle.putString("type", category);
 
-                Fragment fragment = new HomeFragment();
+                Fragment fragment = new Home2Fragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fragment.setArguments(bundle);
@@ -118,7 +118,7 @@ public class TabMain extends Fragment {
                 String category="Women";
                 Bundle bundle=new Bundle();
                 bundle.putString("type", category);
-                Fragment fragment = new HomeFragment();
+                Fragment fragment = new Home2Fragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
 
                 fragment.setArguments(bundle);

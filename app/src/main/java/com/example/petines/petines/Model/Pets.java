@@ -20,8 +20,8 @@ public class Pets {
     private String picture;
     @SerializedName("love")
     private Boolean love;
-    @SerializedName("value")
-    private String value;
+    //@SerializedName("value")
+    //private String value;
     @SerializedName("description")
     private String description;
 
@@ -55,6 +55,7 @@ public class Pets {
         this.description = description;
         this.user = user;
     }
+
 
     public int getId() {
         return id;

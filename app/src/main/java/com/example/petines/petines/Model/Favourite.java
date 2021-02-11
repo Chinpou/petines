@@ -6,13 +6,13 @@ import java.util.List;
 public class Favourite  {
 
         private Favourite fid;
-        private List<Product> products;
+        private List<Pets> Pets;
         private User user;
 
 
-    public Favourite(Favourite fid, List<Product> products, User user) {
+    public Favourite(Favourite fid, List<Pets> pets, User user) {
         this.fid = fid;
-        this.products = products;
+        this.Pets = pets;
         this.user = user;
     }
 
@@ -27,12 +27,12 @@ public class Favourite  {
         this.fid = fid;
     }
 
-    public List<Product> getpOrderItems() {
-        return products;
+    public List<Pets> getpOrderItems() {
+        return Pets;
     }
 
-    public void setpOrderItems(List<Product> pOrderItems) {
-        this.products = pOrderItems;
+    public void setpOrderItems(List<Pets> pOrderItems) {
+        this.Pets = pOrderItems;
     }
 
     public User getUser() {
