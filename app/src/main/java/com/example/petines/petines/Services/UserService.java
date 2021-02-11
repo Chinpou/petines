@@ -1,6 +1,7 @@
 package com.example.petines.petines.Services;
 
 import com.example.petines.petines.Adapters.BaseUrlAdapter;
+import com.example.petines.petines.Adapters.Utils;
 import com.example.petines.petines.Model.User;
 
 import java.util.List;
@@ -14,8 +15,10 @@ import retrofit2.http.Path;
 
 public interface UserService {
 
-    BaseUrlAdapter adapterUrl= new BaseUrlAdapter();
-    String BASE_URL = adapterUrl.getBASE_URL();
+//    Utils utils = new Utils();
+//    String ipv4 = utils.getIPAddress(true);
+//    //String BASE_URL = "http://"+ipv4+":8080";
+    String BASE_URL = "http://192.168.1.12:8080";
 
     @GET("login/{username}")
     Call<User> getUser(@Path("username") String username);
