@@ -21,8 +21,9 @@
             android:name=".Activites.homeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        -->
+
         <activity android:name=".Activites.NavActivity" />
+        -->
         <!--
         <activity
             android:name=".Activites.TestActivity"
@@ -58,7 +59,6 @@
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activites.AddPetActivity" />
         <activity android:name=".Activites.AddActivity" />
 
 

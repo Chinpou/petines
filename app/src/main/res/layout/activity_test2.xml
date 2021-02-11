@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activites.Test2Activity">
 
+
+    <Button
+        android:id="@+id/emailBtn"
+        android:layout_width="170dp"
+        android:layout_height="73dp"
+        android:text="Email Proprio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/EmailPet"
@@ -18,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <TextView
         android:id="@+id/ContactNumberPet"
@@ -31,7 +43,7 @@
         app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.627" />
 
     <TextView
         android:id="@+id/petDescription"
@@ -43,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.906" />
 
     <TextView
         android:id="@+id/namePet"
@@ -109,5 +121,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4" />
+
+    <Button
+        android:id="@+id/callBtn"
+        android:layout_width="170dp"
+        android:layout_height="73dp"
+        android:text="Call Proprio"
+        android:onClick="onClickCallProprio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
 
 </android.support.constraint.ConstraintLayout>
