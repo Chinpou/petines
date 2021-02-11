@@ -1,12 +1,18 @@
 package com.example.petines.petines.Activites;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.ProgressBar;
@@ -16,6 +22,7 @@ import android.widget.Toast;
 import com.example.petines.petines.Adapters.Adapter;
 import com.example.petines.petines.Adapters.CommandeAdapter;
 import com.example.petines.petines.Model.Commande;
+import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
 import java.io.Serializable;
@@ -63,6 +70,7 @@ public class Commander extends AppCompatActivity {
             @Override
             public void onLoveClick(View view, int position) {
 
+
             }
 
 
@@ -77,6 +85,50 @@ public class Commander extends AppCompatActivity {
                 startActivity(new Intent(Commander.this, EditorActivity.class));
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName())
+        );
+        searchView.setQueryHint("Search Pet...");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(final String query) {
+
+                adapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        searchMenuItem.getIcon().setVisible(false, false);
+
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void getCommande(){

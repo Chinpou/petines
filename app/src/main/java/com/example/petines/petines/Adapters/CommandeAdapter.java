@@ -6,41 +6,36 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.petines.petines.Activites.Commander;
 import com.example.petines.petines.Model.Commande;
+import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public abstract class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapter.MyViewHolder> implements Filterable {
-    public static List<Commande> petsCommande;
+    public static List<Commande> commandePets;
     List<Commande> petsFilter;
     private Context context;
     private RecyclerViewClickListener mListener;
     CustomFilter filter;
 
-    public CommandeAdapter(List<Commande> petscommande, Context context, Adapter.RecyclerViewClickListener listener) {
-        this.petsCommande = petscommande;
-        this.petsFilter = petsCommande;
-        this.context = context;
-        this.mListener = (RecyclerViewClickListener) listener;
-    }
-
-    public CommandeAdapter() {
-
-    }
-
     public CommandeAdapter(List<Commande> commandePets, Commander context, RecyclerViewClickListener listener) {
         this.context = context;
+        this.commandePets = commandePets;
+        this.petsFilter = commandePets;
         this.mListener = listener;
 
 
@@ -56,10 +51,10 @@ public abstract class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapt
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        holder.mName.setText(petsCommande.get(position).getPet());
-        holder.mDate.setText(petsCommande.get(position).getDate());
-        holder.mDesciption.setText(petsCommande.get(position).getDescription());
-        holder.mStatut.setText(petsCommande.get(position).getStatus());
+        holder.mName.setText(commandePets.get(position).getPet());
+        holder.mDate.setText(commandePets.get(position).getDate());
+        holder.mDesciption.setText(commandePets.get(position).getDescription());
+        holder.mStatut.setText(commandePets.get(position).getStatus());
 
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.skipMemoryCache(true);
@@ -67,36 +62,49 @@ public abstract class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapt
         requestOptions.placeholder(R.drawable.logo);
         requestOptions.error(R.drawable.logo);
 
+        Glide.with(context)
+                .load(commandePets.get(position).getPicture())
+                .apply(requestOptions)
+                .into(holder.mPicture);
+
 
 
     }
-
+    
+    
     public abstract void onBindViewHolder(Adapter.MyViewHolder holder, int position);
+    {
+        
+    }
+
+    @Override
+    public int getItemCount() {
+        return commandePets.size();
+    }
+    
+
+    //public abstract void onBindViewHolder(Adapter.MyViewHolder holder, int position);
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private Adapter.RecyclerViewClickListener mListener;
+        private RecyclerViewClickListener mListener;
         private CircleImageView mPicture;
-        private ImageView imgPetCommande;
+        //private ImageView imgPetCommande;
         private TextView mName, mDesciption, mDate, mStatut;
         private RelativeLayout mRowContainer;
 
-        public MyViewHolder(View itemView, Adapter.RecyclerViewClickListener listener) {
-            super(itemView);
+        public MyViewHolder(View view, RecyclerViewClickListener mListener) {
+            
+            super(view);
             mPicture = itemView.findViewById(R.id.imgPetCommande);
             mName = itemView.findViewById(R.id.annonce);
             mDesciption = itemView.findViewById(R.id.description);
             mStatut = itemView.findViewById(R.id.statut);
             mDate = itemView.findViewById(R.id.date);
             mRowContainer = itemView.findViewById(R.id.row_container);
-
+            RecyclerViewClickListener listener = null;
             mListener = listener;
             mRowContainer.setOnClickListener(this);
-
-        }
-
-        public MyViewHolder(View view, RecyclerViewClickListener mListener) {
-            super(view);
         }
 
 
@@ -108,7 +116,11 @@ public abstract class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapt
     }
 
     public abstract static class RecyclerViewClickListener {
-        protected abstract void onRowClick(View view, int position);
-        protected abstract void onLoveClick(View view, int position);
+        
+
+        public abstract void onRowClick(View view, int position);
+
+        public abstract void onLoveClick(View view, int position);
+        //void onLoveClick(View view, int position);
     }
 }

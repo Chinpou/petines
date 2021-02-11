@@ -19,7 +19,7 @@ public class Commande {
 
 
     private String date;
-    private Integer Picture;
+    private Integer mPicture;
 
 
     private String location;
@@ -27,10 +27,10 @@ public class Commande {
     public Integer getId() {
         return id;
     }
-    public Integer getPicture(){ return Picture;}
+    public Integer getPicture(){ return mPicture;}
 
     public void setPicture(Integer picture) {
-        Picture = picture;
+        mPicture = picture;
     }
 
     public void setId(Integer id) {
