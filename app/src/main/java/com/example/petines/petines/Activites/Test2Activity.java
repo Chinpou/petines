@@ -60,8 +60,8 @@ public class Test2Activity extends AppCompatActivity {
         BirthPet.setText(intent.getStringExtra("birth"));
         breedPet.setText(intent.getStringExtra("breed"));
         petDescription.setText(intent.getStringExtra("description"));
-        phoneNumber = intent.getStringExtra("contactNumber");
-        ContactNumberPet.setText(phoneNumber);
+        //phoneNumber = intent.getStringExtra("contactNumber");
+        ContactNumberPet.setText(intent.getStringExtra("contactNumber"));
         emailproprio = intent.getStringExtra("EmailPet");
         EmailPet.setText(emailproprio);
 
@@ -87,16 +87,15 @@ public class Test2Activity extends AppCompatActivity {
         });
 
         callBtn = (Button) findViewById(R.id.callBtn);
-/*
+
         callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                callphone();
+                //callphone();
+                onClickCallProprio(v);
             }
         });
 
- */
     }
 
     @Override
@@ -121,6 +120,8 @@ public class Test2Activity extends AppCompatActivity {
     }
     
     void callphone(){
+
+        phoneNumber=ContactNumberPet.getText().toString();
         Intent intent2 = new Intent(Intent.ACTION_CALL);
         intent2.setData(Uri.parse("tel:" + phoneNumber));
         try {
