@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 
 public interface OrderService {
 
-    String BASE_URL = "http://192.168.1.9:8080/";
+    String BASE_URL = "http://192.168.11.102:8080/";
 
 
     @GET("orders/{username}")

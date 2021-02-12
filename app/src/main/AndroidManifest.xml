@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Activites.Test2Activity"></activity>
+
+        <activity android:name=".Activites.Test2Activity" />
         <!--
         <activity
             android:name=".Activites.homeActivity"
@@ -60,8 +61,6 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activites.AddActivity" />
-
-
     </application>
 
 </manifest>

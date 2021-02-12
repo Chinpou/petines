@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.petines.petines.Adapters.Adapter;
+import com.example.petines.petines.Fragments.CommandeFragment;
 import com.example.petines.petines.Fragments.FavouritesFragment;
 import com.example.petines.petines.Fragments.Home2Fragment;
 import com.example.petines.petines.R;
@@ -178,6 +179,14 @@ public class NavigationActivity extends AppCompatActivity
             ft.commit();
         }
         if (id == R.id.nav_myorders) {
+            Fragment fragment = new CommandeFragment();
+            Bundle bdl = new Bundle(4);
+            bdl.putString("username", username);
+            fragment.setArguments(bdl);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
         if (id == R.id.nav_contactUs) {
         }

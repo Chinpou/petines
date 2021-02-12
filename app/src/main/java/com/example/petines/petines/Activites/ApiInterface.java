@@ -1,5 +1,6 @@
 package com.example.petines.petines.Activites;
 
+import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.Pets;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public interface ApiInterface {
 
     @GET("petties")
     Call<List<Pets>> getPets();
+
+    @GET("commandes/{username}")
+    Call<List<Commande>>getCommandesByUser(@Path("username") String username);
 
     @GET("petties/{username}")
     Call<List<Pets>> getMyPetWhishList(@Path("username") String username);
