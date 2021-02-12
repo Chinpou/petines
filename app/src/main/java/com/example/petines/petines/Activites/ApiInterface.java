@@ -1,5 +1,6 @@
 package com.example.petines.petines.Activites;
 
+import com.example.petines.petines.Model.Favourite;
 import com.example.petines.petines.Model.Pets;
 
 import java.util.List;
@@ -20,8 +21,11 @@ public interface ApiInterface {
     @GET("petties")
     Call<List<Pets>> getPets();
 
-    @GET("petties/{username}")
-    Call<List<Pets>> getMyPetWhishList(@Path("username") String username);
+    @GET("petties/connected/{username}")
+    public Call<List<Object>> getAllPetsForConnectedUser(@Path("username") String username);
+
+    @GET("favourites/user/{username}")
+    Call<List<Favourite>> getMyPetWhishList(@Path("username") String username);
 
     @POST("petties/add")
     Call<Pets> insertPet(@Body Pets p);
@@ -30,6 +34,11 @@ public interface ApiInterface {
     @POST("petties/{Id}")
     Call<Pets> updatePet(
             @Path("id") int Id, @Body Pets petty);
+
+    @POST("/favourites/{fav_Id}")
+    Call<Favourite> updateLoveFav(
+            @Path("fav_Id") int fav_Id,
+            @Body boolean love);
 
     @DELETE("petties/delete/{Id}")
     Call<Pets> deletePet(
