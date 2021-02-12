@@ -98,6 +98,7 @@ public class Commande {
     }
 //TODO : lat long for places cible reservation
     // location => lat + long (2 columns)
+    
 
 
     public Commande(User user, Pets pet, String status, String date, String location) {
