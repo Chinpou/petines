@@ -19,6 +19,8 @@ import com.example.petines.petines.Activites.ApiClient;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
+import java.io.Serializable;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,6 +31,7 @@ public class Test2Activity extends AppCompatActivity {
     TextView textview4;
     TextView textview5;
 
+
     String name, species;
 
     ApiInterface apiInterface;
@@ -36,7 +39,7 @@ public class Test2Activity extends AppCompatActivity {
     int id;
     String emailproprio, phoneNumber;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
-    Button emailBtn, callBtn;
+    Button emailBtn, callBtn, commander;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,7 @@ public class Test2Activity extends AppCompatActivity {
         petDescription = (TextView) findViewById(R.id.petDescription);
         ContactNumberPet = (TextView) findViewById(R.id.ContactNumberPet);
         EmailPet = (TextView) findViewById(R.id.EmailPet);
+
 
         Intent intent = getIntent();
         namePet.setText(intent.getStringExtra("name"));
@@ -87,6 +91,16 @@ public class Test2Activity extends AppCompatActivity {
         });
 
         callBtn = (Button) findViewById(R.id.callBtn);
+        commander = (Button) findViewById(R.id.order);
+        commander.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Livraison.class);
+                intent.putExtra("Nom_Pet", (Serializable) namePet);
+                intent.putExtra("Nom_User", (Serializable) name);
+                startActivity(intent);
+            }
+        });
 
         callBtn.setOnClickListener(new View.OnClickListener() {
             @Override

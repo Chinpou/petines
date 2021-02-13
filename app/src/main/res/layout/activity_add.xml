@@ -66,7 +66,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:inputType="textShortMessage"
-            app:layout_constraintBottom_toTopOf="@+id/editDesc"
+            app:layout_constraintBottom_toTopOf="@+id/adresse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.862"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
             tools:text="@tools:sample/date/ddmmyy" />
 
         <EditText
-            android:id="@+id/editDesc"
+            android:id="@+id/adresse"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
@@ -248,9 +248,9 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/petSpecie"
-            app:layout_constraintEnd_toEndOf="@+id/editDesc"
+            app:layout_constraintEnd_toEndOf="@+id/adresse"
             app:layout_constraintStart_toEndOf="@+id/petSpecie"
-            app:layout_constraintStart_toStartOf="@+id/editDesc"
+            app:layout_constraintStart_toStartOf="@+id/adresse"
             app:layout_constraintTop_toTopOf="@+id/petSpecie" />
 
         <Button

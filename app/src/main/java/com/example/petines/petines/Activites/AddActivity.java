@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petines.petines.Model.Pets;
@@ -72,7 +71,7 @@ public class AddActivity extends AppCompatActivity
         radMale = findViewById(R.id.radMale);
         radFemale = findViewById(R.id.radFemale);
         editName = findViewById(R.id.editName);
-        editDescription = findViewById(R.id.editDesc);
+        editDescription = findViewById(R.id.adresse);
         editBirth = findViewById(R.id.editBirth);
         editBreed = findViewById(R.id.editBreed);
         submit = findViewById(R.id.submit);
