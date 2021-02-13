@@ -109,6 +109,9 @@ public class Home2Fragment extends Fragment {
                 final Boolean love = petsList.get(position).getLove();
                 final ImageView mLove = view.findViewById(R.id.love);
 
+                Toast.makeText(getContext(), "pet id" + id,
+                        Toast.LENGTH_SHORT).show();
+
                 if (love){
                     Toast.makeText(getContext(), "making love off",
                             Toast.LENGTH_SHORT).show();
