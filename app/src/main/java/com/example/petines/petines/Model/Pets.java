@@ -136,4 +136,20 @@ public class Pets {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "Pets{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", species='" + species + '\'' +
+                ", breed='" + breed + '\'' +
+                ", gender=" + gender +
+                ", birth='" + birth + '\'' +
+                ", picture='" + picture + '\'' +
+                ", love=" + love +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

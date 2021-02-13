@@ -49,7 +49,6 @@ public class Home2Fragment extends Fragment {
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-
         progressBar = view.findViewById(R.id.progress);
         recyclerView = view.findViewById(R.id.recyclerView);
 

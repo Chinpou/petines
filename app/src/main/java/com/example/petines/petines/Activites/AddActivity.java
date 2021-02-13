@@ -129,7 +129,6 @@ public class AddActivity extends AppCompatActivity
             }
         });
 
-
         editImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {Toast.makeText(getApplicationContext(),
@@ -153,21 +152,16 @@ public class AddActivity extends AppCompatActivity
                 if (name != null && breed != null && gender != -1) {
                     // required fields : name, breed, gender and species.
                     // need to add : price, upload local images to db.
-                    /*
-                    Pets pet = new Pets(name,
-                            specie,
-                            breed,
-                            gender,
-                            description,
-                            birth,
-                            editImage.getResources().toString());
-
-                     */
-
-                //Pets pet = new Pets(name, specie, breed, gender, , birth, description);
-                Pets pet = new Pets(name, specie, breed, gender, birth, editImage.getResources().toString(), description);
-
-
+                Integer image_id = editImage.getId();
+                Pets pet = new Pets(name,
+                        specie,
+                        breed,
+                        gender,
+                        birth,
+                        image_id.toString(),
+                        description);
+                    Log.i("AddActivity IMAGE: ", "ID int:"+editImage.getId()+
+                            "  ,ID string:"+image_id.toString());
                     Log.i("Submit Click", pet.toString());
 
                     sendPet(pet, username);
@@ -211,6 +205,7 @@ public class AddActivity extends AppCompatActivity
     }
 
     private void uploadPictures() {
+
 
         MultipartBody.Part image1 = prepareImagePart(fPath, "cover");
         MultipartBody.Part image2 = prepareImagePart(fPath, "additionnalImage1");
