@@ -1,6 +1,7 @@
 
 package com.example.petines.petines.Services;
 
+import com.example.petines.petines.Adapters.BaseUrlAdapter;
 import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.User;
 
@@ -14,7 +15,8 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface CommandeService {
-    String BASE_URL = "http://192.168.11.102:8080/";
+    BaseUrlAdapter adapterUrl= new BaseUrlAdapter();
+    String BASE_URL = adapterUrl.getBASE_URL();
 
     @GET("commandes/{username}")
     Call<List<Commande>>getCommandesByUser(@Path("username") String username);

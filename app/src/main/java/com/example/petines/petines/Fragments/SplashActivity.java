@@ -32,10 +32,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 SharedPreferences sharedPreferences=getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
                 sp= sharedPreferences.getString("username","");
-
-
-                if(sp.length()==0){
-
+                if(sp.length()==0 || sp==null){
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();

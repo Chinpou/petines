@@ -4,12 +4,17 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/13820e9cc4fa1610ddce9a22b46aa623/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/13820e9cc4fa1610ddce9a22b46aa623/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/13820e9cc4fa1610ddce9a22b46aa623/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/c5062973eabc3706bb63a28fde5a0c91/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/c5062973eabc3706bb63a28fde5a0c91/res" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/fab-1.6.4.aar/c5062973eabc3706bb63a28fde5a0c91/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.clans/fab/1.6.4/9f4322ba4a76940484e06a05e98fa77457822f1c/fab-1.6.4-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.github.clans/fab/1.6.4/9f4322ba4a76940484e06a05e98fa77457822f1c/fab-1.6.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.clans/fab/1.6.4/b2470845485e429cf879d98bc5bbcd3cf9578187/fab-1.6.4-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.github.clans/fab/1.6.4/b2470845485e429cf879d98bc5bbcd3cf9578187/fab-1.6.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

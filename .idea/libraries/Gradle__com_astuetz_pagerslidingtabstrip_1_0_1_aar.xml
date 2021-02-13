@@ -4,12 +4,17 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/c8900f88c4bd39414e340b63834ebbe1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/c8900f88c4bd39414e340b63834ebbe1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/c8900f88c4bd39414e340b63834ebbe1/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/4286a548be3be70d8c5fe8fbf6379758/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/4286a548be3be70d8c5fe8fbf6379758/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/pagerslidingtabstrip-1.0.1.aar/4286a548be3be70d8c5fe8fbf6379758/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.astuetz/pagerslidingtabstrip/1.0.1/95949acd77afb68778e883b4dc56f037bf88f219/pagerslidingtabstrip-1.0.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.astuetz/pagerslidingtabstrip/1.0.1/95949acd77afb68778e883b4dc56f037bf88f219/pagerslidingtabstrip-1.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.astuetz/pagerslidingtabstrip/1.0.1/6a34a8358416eecbbfe6fa3a54b95d8afd4b0b39/pagerslidingtabstrip-1.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.astuetz/pagerslidingtabstrip/1.0.1/6a34a8358416eecbbfe6fa3a54b95d8afd4b0b39/pagerslidingtabstrip-1.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -4,10 +4,14 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/868f31ae45af950aea0f332a945b6136/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/868f31ae45af950aea0f332a945b6136/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/868f31ae45af950aea0f332a945b6136/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/ebaccbd49dc0d33863d230b12fa3260c/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/ebaccbd49dc0d33863d230b12fa3260c/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/ebaccbd49dc0d33863d230b12fa3260c/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/cardview-v7/26.1.0/c77de78f36d149b36821993adbb3e11667dca382/cardview-v7-26.1.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.android.support/cardview-v7/26.1.0/c77de78f36d149b36821993adbb3e11667dca382/cardview-v7-26.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

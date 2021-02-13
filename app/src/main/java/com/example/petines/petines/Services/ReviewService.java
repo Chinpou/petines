@@ -1,5 +1,6 @@
 package com.example.petines.petines.Services;
 
+import com.example.petines.petines.Adapters.BaseUrlAdapter;
 import com.example.petines.petines.Model.Inquiry;
 
 import java.util.List;
@@ -12,8 +13,9 @@ import retrofit2.http.Path;
 
 public interface ReviewService {
 
+    BaseUrlAdapter adapterUrl= new BaseUrlAdapter();
+    String BASE_URL = adapterUrl.getBASE_URL();
 
-    String BASE_URL = "http://192.168.11.102:8080/";
     @POST("reviews")
     Call<Inquiry> addReview(@Body Inquiry review);
 

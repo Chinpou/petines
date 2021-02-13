@@ -4,12 +4,17 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/588cc11046f900029395c68a73dcaa41/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/588cc11046f900029395c68a73dcaa41/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/588cc11046f900029395c68a73dcaa41/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/d9bd94d92529a202cf45235f56e4a961/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/d9bd94d92529a202cf45235f56e4a961/res" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/circleimageview-3.0.0.aar/d9bd94d92529a202cf45235f56e4a961/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/f587db2138b432485f57b1a394141eb9b851ca2a/circleimageview-3.0.0-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/f587db2138b432485f57b1a394141eb9b851ca2a/circleimageview-3.0.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/78063c6cf034f24292cf05a324e69091a58569cf/circleimageview-3.0.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/78063c6cf034f24292cf05a324e69091a58569cf/circleimageview-3.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

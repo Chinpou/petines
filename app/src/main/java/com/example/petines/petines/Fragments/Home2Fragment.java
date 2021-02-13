@@ -196,10 +196,10 @@ public class Home2Fragment extends Fragment {
             @Override
             public void onResponse(Call<Pets> call, Response<Pets> response) {
 
-                Log.i("TAG", "Response "+response.toString());
+                Log.i("Home2Fragment", "Response "+response.toString());
 
                 Pets pet1 = response.body();
-                Log.i("TAG", response.body().toString());
+                Log.i("Home2Fragment", response.body().toString());
 
                 if (pet1.getLove() == TRUE){
                     Toast.makeText(getContext(), "Love TRUE", Toast.LENGTH_SHORT).show();

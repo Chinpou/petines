@@ -40,9 +40,6 @@ public class TabMain extends Fragment {
         TextView itemT= view.findViewById(R.id.itemText);
 
 
-
-
-
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

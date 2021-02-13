@@ -3,6 +3,7 @@ package com.example.petines.petines.Activites;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.view.View.OnClickListener;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText passwordTaken;
     Button button;
     Button signup;
-    String uid;
+    Integer uid;
     User selectedUser;
     boolean x=false;
 
@@ -35,53 +36,45 @@ public class MainActivity extends AppCompatActivity {
            setContentView(R.layout.activity_main);
            setTitle("Login");
 
-        button=(Button)findViewById(R.id.button);
-        usernameTaken=(EditText)findViewById(R.id.editText);
-        passwordTaken=(EditText)findViewById(R.id.editText3);
-        signup=(Button)findViewById(R.id.button3);
+        button= findViewById(R.id.button);
+        usernameTaken= findViewById(R.id.editText);
+        passwordTaken= findViewById(R.id.editText3);
+        signup= findViewById(R.id.button3);
 
-            button.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            sendMessage(usernameTaken.getText().toString(),
+                passwordTaken.getText().toString());
+            }
+        });
 
-                sendMessage(usernameTaken.getText().toString(),
-                    passwordTaken.getText().toString());
-                }
-            });
-
-            signup.setOnClickListener(new OnClickListener() {
+        signup.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     signup();
                 }
             });
-            }
+    }
 
     public void sendMessage(final String username , final String password) {
 
-        usernameTaken = (EditText) findViewById(R.id.editText);
-        String user = usernameTaken.getText().toString();
-        passwordTaken = (EditText) findViewById(R.id.editText3);
-        final String pass = passwordTaken.getText().toString();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(UserService.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = ApiClient.getApiClient();
 
         UserService userService = retrofit.create(UserService.class);
         Call<User> call = userService.getUser(username);
-
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
 
                 selectedUser = response.body();
+                Log.i("onResponse MainActivity", "Uid: "+selectedUser.getUid());
+                Log.i("onResponse MainActivity", selectedUser.toString());
 
                 if(selectedUser.getPassword().equals(password))
                 {
                     /*
-                    SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = getSharedPreferences("Session", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("username", selectedUser.getUsername());
                     editor.putInt("id", selectedUser.getUid());

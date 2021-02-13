@@ -4,10 +4,14 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/590a1dd499856cbe6f08c2dbc8cf8361/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/590a1dd499856cbe6f08c2dbc8cf8361/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/590a1dd499856cbe6f08c2dbc8cf8361/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c106fe29bc0cdc0ca32792f1d9c23103/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c106fe29bc0cdc0ca32792f1d9c23103/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c106fe29bc0cdc0ca32792f1d9c23103/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v4/26.1.0/9c53eab3272b3b26583b17facac2e90d264b2788/support-v4-26.1.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../../../../../Programming/gradle/caches/modules-2/files-2.1/com.android.support/support-v4/26.1.0/9c53eab3272b3b26583b17facac2e90d264b2788/support-v4-26.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -111,4 +111,19 @@ public class  User  {
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", residentAddress='" + residentAddress + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", orders=" + orders +
+                ", profileimg='" + profileimg + '\'' +
+                '}';
+    }
 }

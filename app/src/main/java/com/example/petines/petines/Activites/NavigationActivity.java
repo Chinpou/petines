@@ -31,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    String uid;
+    Integer uid;
     //SharedPreferences sharedPreferences;
     String username;
     TextView welcomeUserTextview;
@@ -47,7 +47,7 @@ public class NavigationActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
-        uid = intent.getStringExtra("user_id");
+        uid = intent.getIntExtra("user_id", 0);
 
         //welcomeUserTextview.setText("Welcome "+ username);
 
