@@ -1,5 +1,5 @@
-//package com.example.petines.petines.Adapters;
-//
+package com.example.petines.petines.Adapters;
+
 //import android.content.Context;
 //import android.support.annotation.NonNull;
 //import android.support.annotation.Nullable;

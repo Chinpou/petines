@@ -19,6 +19,8 @@ import com.example.petines.petines.Activites.ApiClient;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
+import java.io.Serializable;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,14 +31,18 @@ public class Test2Activity extends AppCompatActivity {
     TextView textview4;
     TextView textview5;
 
-    String name, species;
+    String name, species , breed,birth, description;
 
     ApiInterface apiInterface;
     String contactNumber;
-    int id;
+    int id , gender ;
+    Pets pet = new Pets(name, species, breed, gender, birth, "link", description);
     String emailproprio, phoneNumber;
+    String username ;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
-    Button emailBtn, callBtn;
+    Button emailBtn, callBtn, commander;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +58,29 @@ public class Test2Activity extends AppCompatActivity {
         petDescription = (TextView) findViewById(R.id.petDescription);
         ContactNumberPet = (TextView) findViewById(R.id.ContactNumberPet);
         EmailPet = (TextView) findViewById(R.id.EmailPet);
+        username = getIntent().getStringExtra("username");
+
+
 
         Intent intent = getIntent();
+
+        if (intent.getStringExtra("gender")=="male")
+        {
+            gender = -1;
+        }
+        else
+        {
+            gender = 1 ;
+        }
+
+        //Pets pet = new Pets(intent.getStringExtra("name"), intent.getStringExtra("species"), intent.getStringExtra("breed"), gender, intent.getStringExtra("birth"), "link", intent.getStringExtra("description"));
+
+        name = intent.getStringExtra("name");
+        species = intent.getStringExtra("species");
+        breed = intent.getStringExtra("breed");
+        birth = intent.getStringExtra("birth");
+        description = intent.getStringExtra("description");
+
         namePet.setText(intent.getStringExtra("name"));
         speciesPet.setText(intent.getStringExtra("species"));
         GenderPet.setText(intent.getStringExtra("gender"));
@@ -93,6 +120,17 @@ public class Test2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 //callphone();
                 onClickCallProprio(v);
+            }
+        });
+
+        commander = (Button) findViewById(R.id.order);
+        commander.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Livraison.class);
+                intent.putExtra("username", username);
+                intent.putExtra("pet", pet);
+                startActivity(intent);
             }
         });
 

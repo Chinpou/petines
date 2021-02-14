@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-
+        <activity android:name=".Activites.Livraison"></activity>
         <activity android:name=".Activites.Test2Activity" />
         <!--
         <activity

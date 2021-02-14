@@ -117,5 +117,17 @@ public class Commande {
     }
 
 
+
+    public Commande( Pets pet, String status, String date, String location) {
+        /*this.user_id = user;
+        this.pet_id = pet;*/
+        //this.user = user;
+        this.pet = pet;
+        this.status = status;
+        this.date = date;
+        this.location = location;
+    }
+
+
 }
 

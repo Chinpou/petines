@@ -40,6 +40,21 @@ public class Home2Fragment extends Fragment {
     ApiInterface apiInterface;
     Adapter.RecyclerViewClickListener listener;
     ProgressBar progressBar;
+    String username;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+       /* if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }*/
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+
+            username = bundle.getString("username");
+        }
+    }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
@@ -100,6 +115,8 @@ public class Home2Fragment extends Fragment {
                 intent.putExtra("description",petsList.get(position).getDescription());
                 intent.putExtra("contactNumber",petsList.get(position).getUser().getContactNumber());
                 intent.putExtra("EmailPet",petsList.get(position).getUser().getEmailAddress());
+                intent.putExtra("username",username);
+
                 startActivity(intent);
             }
 

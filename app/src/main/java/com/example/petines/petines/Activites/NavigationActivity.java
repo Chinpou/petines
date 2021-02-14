@@ -53,6 +53,9 @@ public class NavigationActivity extends AppCompatActivity
 
 
         Fragment fragment = new Home2Fragment();
+        Bundle bdl = new Bundle(4);
+        bdl.putString("username", username);
+        fragment.setArguments(bdl);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, fragment);
         ft.addToBackStack(null);

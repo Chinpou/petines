@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/petines_updated.iml" filepath="$PROJECT_DIR$/.idea/petines_updated.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/petines_updated.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/petines_updated.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/petines_with_commandes.iml" filepath="$PROJECT_DIR$/.idea/petines_with_commandes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/petines_with_commandes.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/petines_with_commandes.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/projet.petines_with_commandes.iml" filepath="$PROJECT_DIR$/.idea/modules/projet.petines_with_commandes.iml" />
     </modules>
   </component>
 </project>

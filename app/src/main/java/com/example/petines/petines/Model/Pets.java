@@ -2,7 +2,9 @@ package com.example.petines.petines.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Pets {
+import java.io.Serializable;
+
+public class Pets implements Serializable {
 
     @SerializedName("id")
     private int id;
