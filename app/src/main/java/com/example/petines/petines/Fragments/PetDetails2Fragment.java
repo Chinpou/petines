@@ -1,31 +1,28 @@
 package com.example.petines.petines.Fragments;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petines.petines.Activites.ApiInterface;
 import com.example.petines.petines.Activites.NavigationActivity;
+import com.example.petines.petines.Activites.TEMP_LocationActivity;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PetDetailsFragment extends Fragment {
+public class PetDetails2Fragment extends Fragment {
 
     int id;
     ApiInterface apiInterface;
@@ -57,7 +54,7 @@ public class PetDetailsFragment extends Fragment {
         BirthPet = (TextView)view.findViewById(R.id.BirthPet);
         petDescription = (TextView)view.findViewById(R.id.petDescription);
 
-        Button livraison = (Button)view.findViewById(R.id.btnLivraison);
+
 
         getPetsById(id);
 

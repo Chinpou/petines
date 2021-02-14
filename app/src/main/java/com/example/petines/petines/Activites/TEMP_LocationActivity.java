@@ -56,61 +56,54 @@ public class TEMP_LocationActivity extends AppCompatActivity {
                 requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]), ALL_PERMISSIONS_RESULT);
         }
 
+        getLocation();
+    }
+    private void getLocation(){
 
-        Button btn = (Button) findViewById(R.id.getLocation);
+        locationTrack = new LocationTrack(TEMP_LocationActivity.this);
 
+        if (locationTrack.canGetLocation()) {
+            TextView latitude_txt = findViewById(R.id.latitude);
+            TextView longitude_txt = findViewById(R.id.longitude);
+            TextView locationDetails_txt = findViewById(R.id.locationDetails);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            Double longitude = locationTrack.getLongitude();
+            Double latitude = locationTrack.getLatitude();
 
-                locationTrack = new LocationTrack(TEMP_LocationActivity.this);
-
-                if (locationTrack.canGetLocation()) {
-                    TextView latitude_txt = findViewById(R.id.latitude);
-                    TextView longitude_txt = findViewById(R.id.longitude);
-                    TextView locationDetails_txt = findViewById(R.id.locationDetails);
-
-                    Double longitude = locationTrack.getLongitude();
-                    Double latitude = locationTrack.getLatitude();
-
-                    latitude_txt.setText(latitude.toString());
-                    longitude_txt.setText(longitude.toString());
+            latitude_txt.setText(latitude.toString());
+            longitude_txt.setText(longitude.toString());
 
 
-                    List<Address> addresses;
+            List<Address> addresses;
 
-                    try {
-                        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
-                        addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            try {
+                Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+                addresses = geocoder.getFromLocation(latitude, longitude, 1);
 
-                        String address = addresses.get(0).getAddressLine(0);
-                        String area = addresses.get(0).getLocality();
-                        String city = addresses.get(0).getAdminArea();
-                        String country = addresses.get(0).getCountryName();
-                        String postalCode = addresses.get(0).getPostalCode();
+                String address = addresses.get(0).getAddressLine(0);
+                String area = addresses.get(0).getLocality();
+                String city = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
 
-                        String fullAddress = address+", "+
-                                                area+", "+
-                                                city+", "+
-                                                country+", "+
-                                                postalCode+", ";
+                String fullAddress = address+", "+
+                        area+", "+
+                        city+", "+
+                        country+", "+
+                        postalCode+", ";
 
-                        locationDetails_txt.setText(fullAddress);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-
-
-                    Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
-                } else {
-
-                    locationTrack.showSettingsAlert();
-                }
-
+                locationDetails_txt.setText(fullAddress);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        });
+
+
+
+            Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(longitude) + "\nLatitude:" + Double.toString(latitude), Toast.LENGTH_SHORT).show();
+        } else {
+
+            locationTrack.showSettingsAlert();
+        }
 
     }
 
