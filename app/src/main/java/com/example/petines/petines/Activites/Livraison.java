@@ -25,14 +25,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Livraison extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    ApiInterface apiInterface;
+public class Livraison extends AppCompatActivity{
+
     String username;
     String Date;
     String Adresse;
-    User Nom_User;
-    Pets Nom_Pet;
-    String statut;
     Button  BtnOrder;
     Pets pet;
 
@@ -58,23 +55,6 @@ public class Livraison extends AppCompatActivity implements AdapterView.OnItemSe
 
 
 
-        //BtnOrder.setOnClickListener(new View.OnClickListener() {
-            /*@Override
-            public void onClick(View view) {
-                //Intent intent = new Intent(getBaseContext(), CommandeFragment.class);
-                //intent.putExtra("id_pet", namePet);
-                //intent.putExtra("Nom_User", );
-                //startActivity(intent);
-                Fragment fragment = new CommandeFragment();
-                Bundle bdl = new Bundle(4);
-                bdl.putString("username", username);
-                fragment.setArguments(bdl);
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-            }
-        });*/
 
 
         Intent intent = getIntent();
@@ -86,10 +66,6 @@ public class Livraison extends AppCompatActivity implements AdapterView.OnItemSe
             public void onClick(View view) {
                 Date = date.getText().toString();
                 Adresse = adresse.getText().toString();
-               /* String Nom_Pet = getIntent().getStringExtra("Nom_Pet");
-                String Nom_User = getIntent().getStringExtra("Nom_User");*/
-
-               // Log.i("Submit Click", pet.toString());
 
 
                 Commande commande = new Commande(pet,"en cours",Date, Adresse);
@@ -107,9 +83,9 @@ public class Livraison extends AppCompatActivity implements AdapterView.OnItemSe
         call.enqueue(new Callback<Commande>(){
             @Override
             public void onResponse(Call<Commande> call, Response<Commande> response) {
-                //Log.i("OnResponse:", response.body().toString());
+
                 Toast.makeText(getApplicationContext(),
-                        "Nouvelle commande ajouté "/*+response.body().getPetName()*/,
+                        "New order added ",
                         Toast.LENGTH_LONG).show();
             }
 
@@ -122,23 +98,6 @@ public class Livraison extends AppCompatActivity implements AdapterView.OnItemSe
         });
     }
 
-    //public void validerCommande(View view) {
-    //Intent intent = new Intent(Livraison.this, ToActivity.class);
-    //startActivity(intent);
-    //}
 
-
-
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 
 }

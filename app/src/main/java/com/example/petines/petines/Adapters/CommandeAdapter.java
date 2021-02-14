@@ -27,17 +27,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapter.MyViewHolder> {
     public static List<Commande> commandePets;
-    //List<Commande> petsFilter;
+
     private Context context;
     private RecyclerViewClickListener mListener;
-   // CustomFilter filter;
+
 
 
 
     public CommandeAdapter(List<Commande> commandePets, Context context, RecyclerViewClickListener listener) {
         this.context = context;
         this.commandePets = commandePets;
-        //this.petsFilter = commandePets;
+
         this.mListener = listener;
     }
 
@@ -80,13 +80,13 @@ public class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapter.MyView
     }
 
 
-    //public abstract void onBindViewHolder(Adapter.MyViewHolder holder, int position);
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private RecyclerViewClickListener mListener;
         private CircleImageView mPicture;
-        //private ImageView imgPetCommande;
+
         private TextView mName, mDesciption, mDate, mStatut;
         private RelativeLayout mRowContainer;
 
@@ -117,7 +117,5 @@ public class CommandeAdapter extends RecyclerView.Adapter<CommandeAdapter.MyView
 
 
 
-       // public abstract void onLoveClick(View view, int position);
-        //void onLoveClick(View view, int position);
     }
 }
