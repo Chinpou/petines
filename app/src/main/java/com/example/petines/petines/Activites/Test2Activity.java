@@ -12,12 +12,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.petines.petines.Activites.ApiClient;
+import com.example.petines.petines.Adapters.AdapterHome;
+import com.example.petines.petines.Model.Favourite;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,9 +39,12 @@ public class Test2Activity extends AppCompatActivity {
     ApiInterface apiInterface;
     String contactNumber;
     int id;
+    List<Favourite> favList;
     String emailproprio, phoneNumber;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
     Button emailBtn, callBtn, livraisonBtn;
+    ImageView lovePet;
+    Boolean liked = Boolean.FALSE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,7 @@ public class Test2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_test2);
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
+        lovePet = (ImageView)findViewById(R.id.lovePet);
         namePet = (TextView) findViewById(R.id.namePet);
         speciesPet = (TextView) findViewById(R.id.speciesPet);
         breedPet = (TextView) findViewById(R.id.breedPet);
@@ -55,7 +64,8 @@ public class Test2Activity extends AppCompatActivity {
         EmailPet = (TextView) findViewById(R.id.EmailPet);
 
         Intent intent = getIntent();
-        namePet.setText(intent.getStringExtra("name"));
+        final String petTitle = intent.getStringExtra("name");
+        namePet.setText(petTitle);
         speciesPet.setText(intent.getStringExtra("species"));
         GenderPet.setText(intent.getStringExtra("gender"));
         BirthPet.setText(intent.getStringExtra("birth"));
@@ -104,6 +114,41 @@ public class Test2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//
+        Call<List<Favourite>> call = apiInterface.getMyPetWhishList("zouga");
+        call.enqueue(new Callback<List<Favourite>>() {
+            @Override
+            public void onResponse(Call<List<Favourite>> call, Response<List<Favourite>> response) {
+                favList = response.body();
+                for(int i=0; i<favList.size(); i++){
+                    if(favList.get(i).getPets().getName().equals(petTitle)){
+                        //if(Boolean.TRUE.equals(favList.get(i).getLiked())){
+                            liked = Boolean.TRUE;
+                            lovePet.setImageResource(R.drawable.likeon);
+                            Toast.makeText(getApplicationContext(), " this user already already add this pet to wishlist",
+                                    Toast.LENGTH_SHORT).show();
+                       // }
+                    }
+
+                    else {
+                        lovePet.setImageResource(R.drawable.likeof);
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Favourite>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "rp :"+
+                                t.getMessage().toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+//
+        /*
+        if (liked){
+            lovePet.setImageResource(R.drawable.likeon);
+        }
+
+         */
     }
 
     @Override
@@ -140,5 +185,29 @@ public class Test2Activity extends AppCompatActivity {
             //TODO: Handle case where no email app is available
         }
     }
+
+    public void FetchFavorites(String username){
+        Call<List<Favourite>> call = apiInterface.getMyPetWhishList(username);
+        call.enqueue(new Callback<List<Favourite>>() {
+            @Override
+            public void onResponse(Call<List<Favourite>> call, Response<List<Favourite>> response) {
+                favList = response.body();
+                for(int i=0; i<favList.size(); i++){
+                    if(favList.get(i).getPets().getName()==namePet.getText()){
+                        if(Boolean.TRUE.equals(favList.get(i).getLiked())){
+                            liked = Boolean.TRUE;
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Favourite>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "rp :"+
+                                t.getMessage().toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }
