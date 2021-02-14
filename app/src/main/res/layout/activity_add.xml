@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     tools:context=".Activites.AddActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -22,19 +23,22 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:text="Name *"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="@+id/editName"
             app:layout_constraintEnd_toStartOf="@+id/editName"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.406"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editName" />
+            app:layout_constraintTop_toTopOf="@+id/editName"
+            app:layout_constraintVertical_bias="0.38" />
 
         <TextView
             android:id="@+id/petDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="104dp"
             android:clickable="false"
             android:text="Description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petName"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,9 +46,10 @@
             android:id="@+id/petBreed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:clickable="false"
             android:text="Breed"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petSpecie"
             app:layout_constraintTop_toBottomOf="@+id/petSpecie" />
 
@@ -53,58 +58,67 @@
             android:id="@+id/petSpecie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="36dp"
             android:clickable="false"
             android:text="Specie *"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petDesc"
             app:layout_constraintTop_toBottomOf="@+id/petDesc" />
 
         <EditText
             android:id="@+id/editName"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="199dp"
+            android:layout_height="40dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:inputType="textShortMessage"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toTopOf="@+id/adresse"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.862"
+            app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="Rex le Trax"/>
+            app:layout_constraintVertical_bias="0.761"
+            tools:text="Rex le Trax" />
 
         <EditText
             android:id="@+id/editBirth"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="206dp"
+            android:layout_height="41dp"
             android:inputType="date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toBottomOf="@+id/petBirth"
             app:layout_constraintEnd_toEndOf="@+id/editBreed"
             app:layout_constraintStart_toStartOf="@+id/editBreed"
             app:layout_constraintTop_toTopOf="@+id/petBirth"
-            tools:text="@tools:sample/date/ddmmyy" />
+            tools:text="@tools:sample/date/ddmmyy[0]" />
 
         <EditText
             android:id="@+id/adresse"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="210dp"
+            android:layout_height="42dp"
             android:inputType="textMultiLine"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toBottomOf="@+id/petDesc"
             app:layout_constraintEnd_toEndOf="@+id/editName"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editName"
             app:layout_constraintTop_toTopOf="@+id/petDesc"
-            tools:text="Quel joli animal !"/>
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Quel joli animal !" />
 
         <EditText
             android:id="@+id/editBreed"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="204dp"
+            android:layout_height="40dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             app:layout_constraintBottom_toBottomOf="@+id/petBreed"
             app:layout_constraintEnd_toEndOf="@+id/spinnerSpecie"
             app:layout_constraintStart_toStartOf="@+id/spinnerSpecie"
             app:layout_constraintTop_toTopOf="@+id/petBreed"
-            tools:text="Animal royal"/>
+            tools:text="Animal royal" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
@@ -139,9 +153,10 @@
             android:id="@+id/petImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="48dp"
             android:clickable="false"
             android:text="Upload Pictures"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petGender"
             app:layout_constraintTop_toBottomOf="@+id/petGender" />
 
@@ -152,6 +167,7 @@
             android:layout_marginTop="28dp"
             android:clickable="false"
             android:text="Birth date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petBreed"
             app:layout_constraintTop_toBottomOf="@+id/petBreed" />
 
@@ -159,41 +175,45 @@
             android:id="@+id/petGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
             android:clickable="false"
             android:text="Gender"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@+id/petBirth"
             app:layout_constraintTop_toBottomOf="@+id/petBirth" />
 
         <RadioGroup
             android:id="@+id/radioGender"
             android:layout_width="193dp"
-            android:orientation="horizontal"
             android:layout_height="39dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@+id/petGender"
             app:layout_constraintEnd_toEndOf="@+id/editBirth"
+            app:layout_constraintHorizontal_bias="0.692"
             app:layout_constraintStart_toStartOf="@+id/editBirth"
-            app:layout_constraintTop_toTopOf="@+id/petGender">
+            app:layout_constraintTop_toTopOf="@+id/petGender"
+            app:layout_constraintVertical_bias="1.0">
 
             <RadioButton
                 android:id="@+id/radMale"
-                android:layout_marginEnd="14dp"
+
                 android:layout_width="73dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="start|fill"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
                 android:checked="false"
                 android:text="@string/genderM"
-                android:layout_marginRight="14dp"
-                tools:checked="true"/>
+                tools:checked="true" />
 
             <RadioButton
                 android:id="@+id/radFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="fill|end"
-                android:gravity="start|center_vertical"
                 android:checked="false"
-                android:text="@string/genderF"/>
+                android:gravity="start|center_vertical"
+                android:text="@string/genderF" />
 
         </RadioGroup>
 
@@ -201,10 +221,14 @@
             android:id="@+id/petPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
             android:text="Priced"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="@+id/switchPrice"
             app:layout_constraintStart_toStartOf="@+id/petImg"
-            app:layout_constraintTop_toTopOf="@+id/switchPrice" />
+            app:layout_constraintTop_toTopOf="@+id/switchPrice"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Switch
             android:id="@+id/switchPrice"
@@ -241,25 +265,30 @@
 
         <Spinner
             android:id="@+id/spinnerSpecie"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="204dp"
+            android:layout_height="36dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/petSpecie"
             app:layout_constraintEnd_toEndOf="@+id/adresse"
+            app:layout_constraintHorizontal_bias="0.861"
             app:layout_constraintStart_toEndOf="@+id/petSpecie"
             app:layout_constraintStart_toStartOf="@+id/adresse"
-            app:layout_constraintTop_toTopOf="@+id/petSpecie" />
+            app:layout_constraintTop_toTopOf="@+id/petSpecie"
+            app:layout_constraintVertical_bias="0.619" />
 
         <Button
             android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="140dp"
+            android:layout_height="39dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="#FA754C"
             android:text="Ajouter aux annonces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.544"

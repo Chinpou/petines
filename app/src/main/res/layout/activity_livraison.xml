@@ -14,8 +14,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
         android:clickable="false"
-        android:text="Quand souhaitez-vous etre livré :"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Quand souhaitez-vous etre livré ?"
+
         app:layout_constraintHorizontal_bias="0.5" />
 
     <EditText
@@ -35,8 +35,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="215dp"
         android:clickable="false"
-        android:text="Saisissez le lien de la livraison :"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:text="Saisissez le lien de la livraison :"/>
+
     <EditText
         android:id="@+id/adresse"
         android:layout_width="200dp"
@@ -48,26 +48,17 @@
 
     <Button
         android:id="@+id/valider"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@android:style/Widget.Button.Small"
         android:layout_width="182dp"
         android:layout_height="58dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="350dp"
         android:background="#51B355"
-        android:onClick="validerCommande"
-        android:text="Valider "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <Button
-        android:id="@+id/commande"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="71dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="420dp"
-        android:text="Mes commande"
-        android:onClick="MesCommandes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:text="Valider "
+        android:textAppearance="@color/colorAccentEditor" />
+
+
 
 
 </RelativeLayout>
