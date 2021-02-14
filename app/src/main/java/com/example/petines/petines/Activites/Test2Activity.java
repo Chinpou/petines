@@ -16,10 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.petines.petines.Activites.ApiClient;
-import com.example.petines.petines.Adapters.AdapterHome;
 import com.example.petines.petines.Model.Favourite;
-import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
 import java.util.List;
@@ -27,6 +24,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 public class Test2Activity extends AppCompatActivity {
 
@@ -42,9 +42,12 @@ public class Test2Activity extends AppCompatActivity {
     List<Favourite> favList;
     String emailproprio, phoneNumber;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
+    TextView Textfavid;
     Button emailBtn, callBtn, livraisonBtn;
     ImageView lovePet;
     Boolean liked = Boolean.FALSE;
+    int pet_id;
+    TextView Textpetid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +65,14 @@ public class Test2Activity extends AppCompatActivity {
         petDescription = (TextView) findViewById(R.id.petDescription);
         ContactNumberPet = (TextView) findViewById(R.id.ContactNumberPet);
         EmailPet = (TextView) findViewById(R.id.EmailPet);
+        Textfavid = (TextView)findViewById(R.id.Textfavid);
+        Textpetid = (TextView)findViewById(R.id.Textpetid);
 
         Intent intent = getIntent();
         final String petTitle = intent.getStringExtra("name");
         namePet.setText(petTitle);
+        pet_id = intent.getIntExtra("id", 1);
+        Textpetid.setText(String.valueOf(pet_id));
         speciesPet.setText(intent.getStringExtra("species"));
         GenderPet.setText(intent.getStringExtra("gender"));
         BirthPet.setText(intent.getStringExtra("birth"));
@@ -122,16 +129,17 @@ public class Test2Activity extends AppCompatActivity {
                 favList = response.body();
                 for(int i=0; i<favList.size(); i++){
                     if(favList.get(i).getPets().getName().equals(petTitle)){
-                        //if(Boolean.TRUE.equals(favList.get(i).getLiked())){
                             liked = Boolean.TRUE;
                             lovePet.setImageResource(R.drawable.likeon);
+                            Textfavid.setText(favList.get(i).getFid().toString());
                             Toast.makeText(getApplicationContext(), " this user already already add this pet to wishlist",
                                     Toast.LENGTH_SHORT).show();
-                       // }
+                            break;
                     }
 
                     else {
                         lovePet.setImageResource(R.drawable.likeof);
+
                     }
                 }
             }
@@ -142,13 +150,11 @@ public class Test2Activity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
-//
-        /*
-        if (liked){
-            lovePet.setImageResource(R.drawable.likeon);
-        }
 
-         */
+
+
+
+//
     }
 
     @Override
@@ -186,28 +192,63 @@ public class Test2Activity extends AppCompatActivity {
         }
     }
 
-    public void FetchFavorites(String username){
-        Call<List<Favourite>> call = apiInterface.getMyPetWhishList(username);
-        call.enqueue(new Callback<List<Favourite>>() {
+    public void onClickLove(View view) {
+
+        if (liked){
+            lovePet.setImageResource(R.drawable.likeof);
+            Toast.makeText(getApplicationContext(), "making off",
+                    Toast.LENGTH_SHORT).show();
+            updateLove("update_love", Integer.parseInt(Textfavid.getText().toString()), false);
+
+        } else {
+            lovePet.setImageResource(R.drawable.likeon);
+            updateLoveTrue("update_love", pet_id, "zouga");
+        }
+    }
+
+
+    public void updateLove(final String key, final int fav_id, Boolean love){
+
+        Call<Favourite> call = apiInterface.updateLoveFav(fav_id, love);
+
+        call.enqueue(new Callback<Favourite>() {
             @Override
-            public void onResponse(Call<List<Favourite>> call, Response<List<Favourite>> response) {
-                favList = response.body();
-                for(int i=0; i<favList.size(); i++){
-                    if(favList.get(i).getPets().getName()==namePet.getText()){
-                        if(Boolean.TRUE.equals(favList.get(i).getLiked())){
-                            liked = Boolean.TRUE;
-                        }
-                    }
+            public void onResponse(Call<Favourite> call, Response<Favourite> response) {
+
+                //Log.i("TAG", "Response "+response.toString());
+
+                Favourite fav1 = response.body();
+                //Log.i("TAG", response.body().getPets().getName());
+
+                if (fav1.getLiked() == TRUE){
+                    Toast.makeText(getApplicationContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Love FALSE", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
-            public void onFailure(Call<List<Favourite>> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "rp :"+
-                                t.getMessage().toString(),
-                        Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<Favourite> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    public void updateLoveTrue(final String key, final int pet_id, String username){
 
+        Call<Favourite> call = apiInterface.AddFav(username, pet_id);
+
+        call.enqueue(new Callback<Favourite>() {
+            @Override
+            public void onResponse(Call<Favourite> call, Response<Favourite> response) {
+                Favourite fav1 = response.body();
+                Toast.makeText(getApplicationContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Favourite> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

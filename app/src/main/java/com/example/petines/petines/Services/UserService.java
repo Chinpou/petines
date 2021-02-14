@@ -14,7 +14,7 @@ import retrofit2.http.Path;
 
 public interface UserService {
 
-    String BASE_URL = "http://192.168.1.119:8080/";
+    String BASE_URL = "http://192.168.1.7:8080/";
 
     @GET("login/{username}")
     Call<User> getUser(@Path("username") String username);

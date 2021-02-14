@@ -163,6 +163,7 @@
         android:layout_weight="1"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
+        android:onClick="onClickLove"
         android:src="@drawable/likeon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -170,5 +171,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/Textfavid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fav_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <TextView
+        android:id="@+id/Textpetid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pet_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
+
 
 </android.support.constraint.ConstraintLayout>

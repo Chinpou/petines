@@ -1,14 +1,10 @@
 package com.example.petines.petines.Activites;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.example.petines.petines.Adapters.Adapter;
 import com.example.petines.petines.Fragments.FavouritesFragment;
 import com.example.petines.petines.Fragments.Home2Fragment;
-import com.example.petines.petines.Fragments.Home3Fragment;
 import com.example.petines.petines.R;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -22,12 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.petines.petines.Fragments.ManageAccountFragment;
-import com.squareup.picasso.Picasso;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

@@ -35,7 +35,7 @@ public interface ApiInterface {
     Call<Pets> updatePet(
             @Path("id") int Id, @Body Pets petty);
 
-    @POST("/favourites/{fav_Id}")
+    @POST("favourites/{fav_Id}")
     Call<Favourite> updateLoveFav(
             @Path("fav_Id") int fav_Id,
             @Body boolean love);
@@ -45,12 +45,12 @@ public interface ApiInterface {
             @Path("id") int Id);
 
 
-    @POST("/petties/updateLove/{Id}")
+    @POST("petties/updateLove/{Id}")
     Call<Pets> updateLove(
             @Path("Id") int Id,
             @Body boolean love);
 
-    @GET("/petties/petty/Id}")
+    @GET("petties/petty/Id}")
     Call<Pets> getPetById(
             @Path("Id") int Id);
 
@@ -59,6 +59,9 @@ public interface ApiInterface {
     Call<ResponseBody> uploadPictures(
             @Part MultipartBody.Part file1,
             @Part MultipartBody.Part file2);
+
+    @POST("favourites/add/{username}")
+    Call<Favourite> AddFav(@Path("username") String username, @Body int pet_id);
 
 /*
     @GET("pets/{petsId}")

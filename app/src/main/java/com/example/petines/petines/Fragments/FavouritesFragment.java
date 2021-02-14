@@ -124,6 +124,7 @@ public class FavouritesFragment extends Fragment {
 
                  //final int id = petsList.get(position).getPets().getId();
                  final int id = petsList.get(position).getFid();
+                 final int petty_id = petsList.get(position).getPets().getId();
                  final Boolean love = petsList.get(position).getLiked();
                  final ImageView mLove = view.findViewById(R.id.love);
 
@@ -137,7 +138,7 @@ public class FavouritesFragment extends Fragment {
                  } else {
                      mLove.setImageResource(R.drawable.likeon);
                      petsList.get(position).setLiked(true);
-                     updateLove("update_love", id, true);
+                     updateLoveTrue("update_love", petty_id, username);
                      adapter.notifyDataSetChanged();
                  }
              }
@@ -230,4 +231,31 @@ public class FavouritesFragment extends Fragment {
             }
         });
     }
+    public void updateLoveTrue(final String key, final int pet_id, String username){
+
+        Call<Favourite> call = apiInterface.AddFav(username, pet_id);
+
+        call.enqueue(new Callback<Favourite>() {
+            @Override
+            public void onResponse(Call<Favourite> call, Response<Favourite> response) {
+
+                //Log.i("TAG", "Response "+response.toString());
+
+                Favourite fav1 = response.body();
+                //Log.i("TAG", response.body().getPets().getName());
+
+                if (fav1.getLiked() == TRUE){
+                    Toast.makeText(getContext(), "Love TRUE", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Love FALSE", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Favourite> call, Throwable t) {
+                Toast.makeText(getContext(), t.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
