@@ -31,17 +31,16 @@ public class Test2Activity extends AppCompatActivity {
     TextView textview4;
     TextView textview5;
 
-    String name, species , breed,birth, description;
+    String name, species, breed, birth, description;
 
     ApiInterface apiInterface;
     String contactNumber;
-    int id , gender ;
+    int id, gender;
     Pets pet = new Pets(name, species, breed, gender, birth, "link", description);
     String emailproprio, phoneNumber;
-    String username ;
+    String username;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
     Button emailBtn, callBtn, commander;
-
 
 
     @Override
@@ -61,16 +60,12 @@ public class Test2Activity extends AppCompatActivity {
         username = getIntent().getStringExtra("username");
 
 
-
         Intent intent = getIntent();
 
-        if (intent.getStringExtra("gender")=="male")
-        {
+        if (intent.getStringExtra("gender") == "male") {
             gender = -1;
-        }
-        else
-        {
-            gender = 1 ;
+        } else {
+            gender = 1;
         }
 
         //Pets pet = new Pets(intent.getStringExtra("name"), intent.getStringExtra("species"), intent.getStringExtra("breed"), gender, intent.getStringExtra("birth"), "link", intent.getStringExtra("description"));
@@ -119,7 +114,21 @@ public class Test2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //callphone();
-                onClickCallProprio(v);
+                String number = ContactNumberPet.getText().toString();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:" + number));
+                if (ActivityCompat.checkSelfPermission(Test2Activity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivity(callIntent);
+                //onClickCallProprio(v);
             }
         });
 
@@ -136,7 +145,7 @@ public class Test2Activity extends AppCompatActivity {
 
     }
 
-    @Override
+   /* @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
@@ -169,6 +178,6 @@ public class Test2Activity extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             //TODO: Handle case where no email app is available
         }
-    }
+    }*/
 
 }
