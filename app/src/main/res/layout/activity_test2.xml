@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,93 +7,53 @@
     tools:context=".Activites.Test2Activity">
 
 
-    <Button
-        android:id="@+id/emailBtn"
-        android:layout_width="170dp"
-        android:layout_height="73dp"
-        android:text="Email Proprio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/EmailPet"
         android:layout_width="252dp"
         android:layout_height="31dp"
+        android:layout_marginBottom="76dp"
         android:text="Email du proprio"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/callBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/ContactNumberPet"
         android:layout_width="252dp"
         android:layout_height="31dp"
+        android:layout_marginBottom="32dp"
         android:text="contact number"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintBottom_toTopOf="@+id/EmailPet"
+        app:layout_constraintEnd_toEndOf="@+id/EmailPet"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/EmailPet" />
 
     <TextView
         android:id="@+id/petDescription"
-        android:layout_width="331dp"
-        android:layout_height="143dp"
+        android:layout_width="379dp"
+        android:layout_height="105dp"
+        android:padding="8dp"
         android:text="Description"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ContactNumberPet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
-
-    <TextView
-        android:id="@+id/namePet"
-        android:layout_width="95dp"
-        android:layout_height="30dp"
-        android:text="Name"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
-
-    <TextView
-        android:id="@+id/speciesPet"
-        android:layout_width="95dp"
-        android:layout_height="30dp"
-        android:text="Species"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        app:layout_constraintTop_toBottomOf="@+id/breedPet"
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/breedPet"
-        android:layout_width="95dp"
-        android:layout_height="30dp"
+        android:layout_width="248dp"
+        android:layout_height="32dp"
         android:text="breed"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintBottom_toBottomOf="@+id/speciesPet"
+        app:layout_constraintEnd_toEndOf="@+id/GenderPet"
+        app:layout_constraintTop_toTopOf="@+id/speciesPet"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/GenderPet"
@@ -102,37 +61,98 @@
         android:layout_height="30dp"
         android:text="Gender"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/namePet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/BirthPet"
+        app:layout_constraintTop_toTopOf="@+id/namePet"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/speciesPet"
+        android:layout_width="115dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Species"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ContactNumberPet"
+        app:layout_constraintEnd_toStartOf="@+id/breedPet"
+        app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintTop_toBottomOf="@+id/namePet"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/namePet"
+        android:layout_width="255dp"
+        android:layout_height="46dp"
+        android:text="Name"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ContactNumberPet"
+        app:layout_constraintEnd_toStartOf="@+id/GenderPet"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/speciesPet"
+        app:layout_constraintTop_toBottomOf="@+id/BirthPet"
+        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/BirthPet"
         android:layout_width="95dp"
         android:layout_height="30dp"
+        android:layout_marginTop="36dp"
         android:text="Birth"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/callBtn"
-        android:layout_width="170dp"
-        android:layout_height="73dp"
-        android:text="Call Proprio"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="120dp"
         android:onClick="onClickCallProprio"
+        android:text="Call"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/emailBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/livraisonBtn"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:text="Livraison"
+        app:layout_constraintBottom_toBottomOf="@+id/emailBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/emailBtn"
+        app:layout_constraintTop_toTopOf="@+id/emailBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/emailBtn"
+        android:layout_width="115dp"
+        android:layout_height="85dp"
+        android:text="Email"
+        app:layout_constraintBottom_toBottomOf="@+id/callBtn"
+        app:layout_constraintEnd_toStartOf="@+id/livraisonBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/callBtn"
+        app:layout_constraintTop_toTopOf="@+id/callBtn" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pet details"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/BirthPet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintTop_toTopOf="@+id/BirthPet"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

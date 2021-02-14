@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.example.petines.petines.Adapters.Adapter;
 import com.example.petines.petines.Fragments.FavouritesFragment;
 import com.example.petines.petines.Fragments.Home2Fragment;
+import com.example.petines.petines.Fragments.Home3Fragment;
 import com.example.petines.petines.R;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;

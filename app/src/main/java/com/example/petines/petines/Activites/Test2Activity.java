@@ -36,11 +36,12 @@ public class Test2Activity extends AppCompatActivity {
     int id;
     String emailproprio, phoneNumber;
     TextView petDescription, namePet, speciesPet, breedPet, GenderPet, BirthPet, ContactNumberPet, EmailPet;
-    Button emailBtn, callBtn;
+    Button emailBtn, callBtn, livraisonBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Confirmer la commande");
         setContentView(R.layout.activity_test2);
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
@@ -66,7 +67,6 @@ public class Test2Activity extends AppCompatActivity {
         EmailPet.setText(emailproprio);
 
         emailBtn = (Button) findViewById(R.id.emailBtn);
-
         emailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +87,6 @@ public class Test2Activity extends AppCompatActivity {
         });
 
         callBtn = (Button) findViewById(R.id.callBtn);
-
         callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +95,15 @@ public class Test2Activity extends AppCompatActivity {
             }
         });
 
+        livraisonBtn = (Button) findViewById(R.id.livraisonBtn);
+        livraisonBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Livraison ACTION", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Test2Activity.this, TEMP_LocationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -118,7 +126,7 @@ public class Test2Activity extends AppCompatActivity {
             callphone();
         }
     }
-    
+
     void callphone(){
 
         phoneNumber=ContactNumberPet.getText().toString();

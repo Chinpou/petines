@@ -13,7 +13,7 @@ import retrofit2.http.Path;
 public interface PetService {
 
 
-    String BASE_URL = "http://192.168.1.6:8080/";
+    String BASE_URL = "http://192.168.1.119:8080/";
 
     @POST("petties/add/{username}")
     Call<Pets> addNewPet(@Path("username") String username , @Body Pets pet);

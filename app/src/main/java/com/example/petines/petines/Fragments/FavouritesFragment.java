@@ -204,9 +204,9 @@ public class FavouritesFragment extends Fragment {
     }
  */
 
-    public void updateLove(final String key, final int id, Boolean love){
+    public void updateLove(final String key, final int fav_id, Boolean love){
 
-        Call<Favourite> call = apiInterface.updateLoveFav(id, love);
+        Call<Favourite> call = apiInterface.updateLoveFav(fav_id, love);
 
         call.enqueue(new Callback<Favourite>() {
             @Override

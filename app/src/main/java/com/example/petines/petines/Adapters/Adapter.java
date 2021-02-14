@@ -65,6 +65,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
                 .apply(requestOptions)
                 .into(holder.mPicture);
 
+        holder.mLove.setVisibility(View.INVISIBLE);
+        /*
+
+
         final Boolean love = pets.get(position).getLove();
 
         if (love){
@@ -72,6 +76,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         } else {
             holder.mLove.setImageResource(R.drawable.likeof);
         }
+
+         */
 
     }
 

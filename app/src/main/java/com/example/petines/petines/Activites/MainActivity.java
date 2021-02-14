@@ -80,13 +80,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if(selectedUser.getPassword().equals(password))
                 {
-                    /*
+/*
                     SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("username", selectedUser.getUsername());
                     editor.putInt("id", selectedUser.getUid());
                     editor.apply();
-                     */
+
+ */
 
                     Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
                     intent.putExtra("username", username);
