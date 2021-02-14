@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/0869808c40594bfdb130f4b9a648b61d/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/0869808c40594bfdb130f4b9a648b61d/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/0869808c40594bfdb130f4b9a648b61d/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/933700831b6344df14095ddaa4cd8cc6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/933700831b6344df14095ddaa4cd8cc6/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sugar-1.3.aar/933700831b6344df14095ddaa4cd8cc6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.satyan/sugar/1.3/c263b55b6b7877694f537725897a694d960095e5/sugar-1.3-javadoc.jar!/" />

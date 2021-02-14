@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.368" />
 
     <EditText
         android:id="@+id/editText3"
@@ -57,6 +57,7 @@
         android:background="@color/white"
         android:elevation="10dp"
         android:text="Login"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/colorPrimary"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintVertical_bias="0.813" />
 
     <Button
         android:id="@+id/button3"
@@ -77,19 +78,20 @@
         android:background="@color/white"
         android:elevation="10dp"
         android:text="Sign Up!"
-        android:textColor="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
 
+        android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="202dp"
-        android:layout_height="190dp"
+        android:layout_width="221dp"
+        android:layout_height="231dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -100,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/petines" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -109,9 +111,9 @@
         android:text="Remember Me"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintVertical_bias="0.726" />
 
 </android.support.constraint.ConstraintLayout>
