@@ -1,55 +1,32 @@
 package com.example.petines.petines.Activites;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 
-import com.example.petines.petines.Fragments.CancelledOrders;
-import com.example.petines.petines.Fragments.ContactUsFragment;
-//import com.example.petines.petines.Fragments.FavouritesFragment;
-import com.example.petines.petines.Fragments.TabMain;
-import com.example.petines.petines.Model.User;
+import com.example.petines.petines.Fragments.FavouritesFragment;
+import com.example.petines.petines.Fragments.Home2Fragment;
 import com.example.petines.petines.R;
-import com.github.clans.fab.FloatingActionButton;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.petines.petines.Fragments.CartFragment;
-import com.example.petines.petines.Fragments.HomeFragment;
 import com.example.petines.petines.Fragments.ManageAccountFragment;
-import com.example.petines.petines.Fragments.PurchaseHistoryFragment;
-//import com.example.petines.petines.Fragments.ViewCart;
-//import com.example.petines.petines.Model.tabPager;
-import com.github.clans.fab.FloatingActionMenu;
-import com.orm.SugarRecord;
-import com.squareup.picasso.Picasso;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     String uid;
-    Bundle bundle;
-    FloatingActionMenu fam;
-    FloatingActionButton fabFavs, fabCart, fabOrders, fabProfile, fabShipping;
+    //SharedPreferences sharedPreferences;
+    String username;
+    TextView welcomeUserTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,93 +35,48 @@ public class NavigationActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
-        //SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
-        //String id = sharedPreferences.getString("uid", "");
-        //final User userData = SugarRecord.findById(User.class, Long.parseLong(id));
+        //welcomeUserTextview = (TextView)findViewById(R.id.welcomeUserTextview);
 
-        //cast the serializable object to a User type object after getting it throug  the intent
-        fam = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
-        fabCart = (FloatingActionButton) findViewById(R.id.fabCart);
-        fabOrders = (FloatingActionButton) findViewById(R.id.fabOrders);
-        fabProfile =(FloatingActionButton) findViewById(R.id.fabProfile);
-        fabFavs =  (FloatingActionButton)findViewById(R.id.fabHome);
-        fabShipping =  (FloatingActionButton)findViewById(R.id.fabShipping);
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        uid = intent.getStringExtra("user_id");
+
+        //welcomeUserTextview.setText("Welcome "+ username);
+
+
+        Fragment fragment = new Home2Fragment();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.addToBackStack(null);
+        ft.commit();
+
+       //sharedPreferences = getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
+      //String id = sharedPreferences.getString("uid", "");
+      //final User userData = SugarRecord.findById(User.class, Long.parseLong(id));
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        displaySettingsScreen(R.id.nav_home);
+        displaySettingsScreen(R.id.home);
         setTitle("Home");
 
-        fam.setClosedOnTouchOutside(true);
+        //fam.setClosedOnTouchOutside(true);
 
-        // fab.setOnTouchListener(NavigationActivity.this);
+//         fab.setOnTouchListener(NavigationActivity.this);
 
-
-        fabCart.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                /*
-                Fragment fragment = new TabMain();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-                fam.close(true);
-
-                 */
-            }
-        });
-
-
-        fabShipping.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Fragment fragment = new PurchaseHistoryFragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-                fam.close(true);
-            }
-        });
-
-
+/*
         fabFavs.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                /*
-                Fragment fragment = new FavouritesFragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-                fam.close(true);
-
-                 */
-            }
-        });
-
-        fabProfile.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Fragment fragment = new ManageAccountFragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
+                SharedPreferences sharedPreferences=getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
+                sharedPreferences.edit().clear().commit();
+                Intent intent = new Intent(NavigationActivity.this, MainActivity.class);
+                startActivity(intent);
+                setTitle("Login");
                 fam.close(true);
             }
         });
-        fabOrders.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                /*
-                Fragment fragment = new ViewCart();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
-                fam.close(true);
 
-                 */
-            }
-        });
-
+ */
+//
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -152,7 +84,20 @@ public class NavigationActivity extends AppCompatActivity
         toggle.syncState();
 
 
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
 
+
+        View header_view = navigationView.getHeaderView(0);
+        TextView user_name_text_view = header_view.findViewById(R.id.welcomeUserTextview);
+        TextView user_id = header_view.findViewById(R.id.textView);
+
+        //CircleImageView profile_img = header_view.findViewById(R.id.imageView);
+
+        user_name_text_view.setText("Welcome "+ username);
+        user_id.setText("User ID : "+ uid);
+
+        //Picasso.get().load(Prevalent.online_user.getImage()).placeholder(R.drawable.profile).into(profile_img);
     }
 
 
@@ -184,54 +129,10 @@ public class NavigationActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-
-     /*FragmentTransaction tx = fragmentManager.beginTransation();
-tx.replace( R.id.fragment, new MyFragment() ).addToBackStack( "tag" ).commit();
-     final Myfragment fragment = new MyFragment();
-     final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.fragment, fragment, TAG_FRAGMENT);
-    transaction.addToBackStack(null);
-    transaction.commit();
-*/
     private void displaySettingsScreen(int id) {
-        Fragment fragment = null;
-
-        switch (id) {
-// 1
-            case R.id.nav_home:
-                fragment = new TabMain();
-                break;
-            case R.id.nav_cancelled:
-                fragment = new CancelledOrders();
-                break;
-
-
-            case R.id.nav_contactUs:
-                fragment = new ContactUsFragment();
-                break;
-
-            case R.id.nav_logout:
-                SharedPreferences sharedPreferences=getSharedPreferences("loginDetails", Context.MODE_PRIVATE);
-                sharedPreferences.edit().clear().commit();
-                Intent intent = new Intent(NavigationActivity.this, MainActivity.class);
-                startActivity(intent);
-                break;
-
-        }
-        if (fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.fragment_container, fragment);
-            ft.addToBackStack(null);
-            ft.commit();
-
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -240,18 +141,46 @@ tx.replace( R.id.fragment, new MyFragment() ).addToBackStack( "tag" ).commit();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-      /*  if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-        } else if (id == R.id.nav_slideshow) {
-        } else if (id == R.id.nav_manage) {
-        } else if (id == R.id.nav_share) {
-        } else if (id == R.id.nav_send) {
+        if (id == R.id.nav_home) {
+            Fragment fragment = new Home2Fragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
-*/
+        if (id == R.id.nav_manageAccount) {
+            Fragment fragment = new ManageAccountFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
+        }
+        if (id == R.id.nav_mypets) {
+            Intent intent = new Intent(getApplicationContext(), AddActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        }
+        if (id == R.id.nav_mywishlist) {
+            Fragment fragment = new FavouritesFragment();
+            Bundle bdl = new Bundle(4);
+            bdl.putString("username", username);
+            fragment.setArguments(bdl);
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fragment_container, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
+        }
+        if (id == R.id.nav_myorders) {
+        }
+        if (id == R.id.nav_contactUs) {
+        }
+        if (id == R.id.nav_logout) {
+            /*
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+             */
+        }
         displaySettingsScreen(id);
-
-
         return true;
     }
 

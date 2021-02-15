@@ -77,16 +77,10 @@ public class ManageAccountFragment extends Fragment {
                         .load(u.getProfileimg())
                         .placeholder(R.drawable.pc)
                         .into(profilePic);
-
-
-
-
-
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable throwable) {
-
             }
         });
 
@@ -171,8 +165,6 @@ public class ManageAccountFragment extends Fragment {
                                             @Override
                                             public void onResponse(Call<User> call, Response<User> response) {
                                                 Toast.makeText(getActivity(), "User Updated!", Toast.LENGTH_LONG).show();
-
-
                                             }
 
                                             @Override
@@ -185,14 +177,8 @@ public class ManageAccountFragment extends Fragment {
 
                                     @Override
                                     public void onFailure(Call<User> call, Throwable throwable) {
-
                                     }
                                 });
-
-
-
-
-
                             saveChanges.setEnabled(false);
                             usernameText.setEnabled(false);
                             passwordText.setEnabled(false);
@@ -203,7 +189,6 @@ public class ManageAccountFragment extends Fragment {
                         else{
                             Toast.makeText(getActivity(),"Username/Email already in use!",Toast.LENGTH_LONG).show();
                         }
-
                     }
 
                     @Override
@@ -211,21 +196,9 @@ public class ManageAccountFragment extends Fragment {
 
                     }
                 });
-
-
-
             }
 
         });
-
-
-
-
 return view;
-
-
     }
-
-
-
 }

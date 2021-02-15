@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.petines.petines.Model.Favourite;
 import com.example.petines.petines.Model.Pets;
 import com.example.petines.petines.R;
 
@@ -23,15 +24,15 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implements Filterable {
+public class AdapterFavourites extends RecyclerView.Adapter<AdapterFavourites.MyViewHolder> implements Filterable {
 
-    public List<Pets> pets;
-    List<Pets> petsFilter;
+    public List<Favourite> pets;
+    List<Favourite> petsFilter;
     private Context context;
     private RecyclerViewClickListener mListener;
-    CustomFilter filter;
+    CustomFilterFavourite filter;
 
-    public Adapter(List<Pets> pets, Context context, RecyclerViewClickListener listener) {
+    public AdapterFavourites(List<Favourite> pets, Context context, RecyclerViewClickListener listener) {
         this.pets = pets;
         this.petsFilter = pets;
         this.context = context;
@@ -48,10 +49,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        holder.mName.setText(pets.get(position).getName());
-        holder.mType.setText(pets.get(position).getBreed() + " / "
-                + pets.get(position).getSpecies());
-        holder.mDate.setText(pets.get(position).getBirth());
+        holder.mName.setText(pets.get(position).getPets().getName());
+        holder.mType.setText(pets.get(position).getPets().getBreed() + " / "
+                + pets.get(position).getPets().getSpecies());
+        holder.mDate.setText(pets.get(position).getPets().getBirth());
         //holder.mPicture.setImageResource(Integer.getInteger(pets.get(position).getPicture()));
 
         RequestOptions requestOptions = new RequestOptions();
@@ -61,20 +62,17 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
         requestOptions.error(R.drawable.logo);
 
         Glide.with(context)
-                .load(pets.get(position).getPicture())
+                .load(pets.get(position).getPets().getPicture())
                 .apply(requestOptions)
                 .into(holder.mPicture);
 
-        holder.mLove.setVisibility(View.INVISIBLE);
-        /*
-        final Boolean love = pets.get(position).getLove();
+        final Boolean love = pets.get(position).getLiked();
 
         if (love){
             holder.mLove.setImageResource(R.drawable.likeon);
         } else {
             holder.mLove.setImageResource(R.drawable.likeof);
         }
-         */
 
     }
 
@@ -86,7 +84,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> implemen
     @Override
     public Filter getFilter() {
         if (filter==null) {
-            filter=new CustomFilter((ArrayList<Pets>) petsFilter,this);
+            filter=new CustomFilterFavourite((ArrayList<Favourite>) petsFilter,this);
 
         }
         return filter;

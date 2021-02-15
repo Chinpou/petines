@@ -20,10 +20,12 @@ public class Pets {
     private String picture;
     @SerializedName("love")
     private Boolean love;
-    @SerializedName("value")
-    private String value;
-    @SerializedName("message")
-    private String massage;
+    //@SerializedName("value")
+    //private String value;
+    @SerializedName("description")
+    private String description;
+
+    private User user;
 
     public Pets(String name, String species, String breed, int gender, String birth, String picture) {
         this.name = name;
@@ -33,6 +35,27 @@ public class Pets {
         this.birth = birth;
         this.picture = picture;
     }
+    public Pets(String name, String species, String breed, int gender, String birth, String picture, String description) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.gender = gender;
+        this.birth = birth;
+        this.picture = picture;
+        this.description = description;
+    }
+
+    public Pets(String name, String species, String breed, int gender, String birth, String picture, String description, User user) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.gender = gender;
+        this.birth = birth;
+        this.picture = picture;
+        this.description = description;
+        this.user = user;
+    }
+
 
     public int getId() {
         return id;
@@ -98,19 +121,19 @@ public class Pets {
         this.love = love;
     }
 
-    public String getValue() {
-        return value;
+    public String getDescription() {
+        return description;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getMassage() {
-        return massage;
+    public User getUser() {
+        return user;
     }
 
-    public void setMassage(String massage) {
-        this.massage = massage;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

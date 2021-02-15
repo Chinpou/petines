@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.petines.petines">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:name="com.orm.SugarApp"
@@ -14,8 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".Activites.TestActivity"></activity>
-        <activity android:name=".Activites.NavActivity"></activity>
+        <activity android:name=".Activites.Test2Activity"></activity>
+        <!--
+        <activity
+            android:name=".Activites.homeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity android:name=".Activites.NavActivity" />
+        -->
         <!--
         <activity
             android:name=".Activites.TestActivity"
@@ -24,8 +34,9 @@
 
         </activity>
         -->
-        <activity android:name=".Activites.MainActivity"></activity>
+        <activity android:name=".Activites.MainActivity" />
         <activity android:name=".Activites.Registration" />
+        <activity android:name=".Activites.TEMP_LocationActivity"/>
 
         <meta-data
             android:name="DATABASE"
@@ -50,7 +61,10 @@
         <activity
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activites.AddActivity" />
+
+
     </application>
 
 </manifest>

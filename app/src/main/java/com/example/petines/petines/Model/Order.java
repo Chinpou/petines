@@ -11,23 +11,25 @@ public class Order {
         private String comment;
 
         private User user;
-        private List<OrderItem> orderItems;
+        //private List<OrderItem> orderItems;
 
 
         public Order() {
         }
 
-        public Order(String order_date, String status, String comment, User user, List<OrderItem> orderItems) {
+        public Order(String order_date, String status, String comment, User user) {
             this.order_date = order_date;
             this.status = status;
             this.comment = comment;
             this.user = user;
-            this.orderItems = orderItems;
+            //this.orderItems = orderItems;
         }
-
+/*
         public Order(List<OrderItem> orderItems) {
             this.orderItems = orderItems;
         }
+
+ */
 
         public Integer getId() {
             return id;
@@ -68,7 +70,7 @@ public class Order {
         public void setUser(User user) {
             this.user = user;
         }
-
+/*
         public List<OrderItem> getOrderItems() {
             return orderItems;
         }
@@ -76,4 +78,6 @@ public class Order {
         public void setOrderItems(List<OrderItem> orderItems) {
             this.orderItems = orderItems;
         }
+
+ */
     }

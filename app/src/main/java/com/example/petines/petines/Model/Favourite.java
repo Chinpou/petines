@@ -1,38 +1,30 @@
 package com.example.petines.petines.Model;
 
-import java.util.List;
+public class Favourite {
 
+    private Integer fid;
 
-public class Favourite  {
+    private User user;
 
-        private Favourite fid;
-        private List<Product> products;
-        private User user;
+    private Pets pets;
 
-
-    public Favourite(Favourite fid, List<Product> products, User user) {
-        this.fid = fid;
-        this.products = products;
-        this.user = user;
-    }
+    private Boolean liked;
 
     public Favourite() {
     }
 
-    public Favourite getFid() {
+    public Favourite(User user, Pets pets, Boolean liked) {
+        this.user = user;
+        this.pets = pets;
+        this.liked = liked;
+    }
+
+    public Integer getFid() {
         return fid;
     }
 
-    public void setFid(Favourite fid) {
+    public void setF_id(Integer fid) {
         this.fid = fid;
-    }
-
-    public List<Product> getpOrderItems() {
-        return products;
-    }
-
-    public void setpOrderItems(List<Product> pOrderItems) {
-        this.products = pOrderItems;
     }
 
     public User getUser() {
@@ -41,5 +33,21 @@ public class Favourite  {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Pets getPets() {
+        return pets;
+    }
+
+    public void setPets(Pets pets) {
+        this.pets = pets;
+    }
+
+    public Boolean getLiked() {
+        return liked;
+    }
+
+    public void setLiked(Boolean liked) {
+        this.liked = liked;
     }
 }

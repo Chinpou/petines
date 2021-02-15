@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             });
             }
 
-    public void sendMessage(String username , final String password) {
+    public void sendMessage(final String username , final String password) {
 
         usernameTaken = (EditText) findViewById(R.id.editText);
         String user = usernameTaken.getText().toString();
@@ -78,17 +78,20 @@ public class MainActivity extends AppCompatActivity {
 
                 selectedUser = response.body();
 
-
                 if(selectedUser.getPassword().equals(password))
                 {
-                    //SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", MODE_PRIVATE);
-                    //SharedPreferences.Editor editor = sharedPreferences.edit();
-                    //editor.putString("username", selectedUser.getUsername());
-                    //editor.putInt("id", selectedUser.getUid());
-                    //editor.apply();
+/*
+                    SharedPreferences sharedPreferences = getSharedPreferences("loginDetails", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username", selectedUser.getUsername());
+                    editor.putInt("id", selectedUser.getUid());
+                    editor.apply();
 
+ */
 
-                    Intent intent = new Intent(MainActivity.this, NavActivity.class);
+                    Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("user_id", selectedUser.getUid());
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, "Welcome "+selectedUser.getUsername() + "!", Toast.LENGTH_LONG).show();
                 }
@@ -98,19 +101,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
     public void signup() {
-
         Intent intent=new Intent(MainActivity.this, Registration.class);
         startActivity(intent);
-
     }
 
     @Override
     public void onBackPressed() {
-
     }
 }

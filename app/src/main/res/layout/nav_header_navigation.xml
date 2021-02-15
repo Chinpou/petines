@@ -20,6 +20,7 @@
         android:src="@drawable/profilepic" />
 
     <TextView
+        android:id="@+id/welcomeUserTextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -32,6 +33,6 @@
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="user@styleomega.com" />
+        android:text="user@yasszoug" />
 
 </LinearLayout>
