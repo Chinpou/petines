@@ -1,5 +1,6 @@
 package com.example.petines.petines.Activites;
 
+import com.example.petines.petines.Model.Commande;
 import com.example.petines.petines.Model.Favourite;
 import com.example.petines.petines.Model.Pets;
 
@@ -26,6 +27,9 @@ public interface ApiInterface {
 
     @GET("favourites/user/{username}")
     Call<List<Favourite>> getMyPetWhishList(@Path("username") String username);
+
+    @GET("commandes/{username}")
+    Call<List<Commande>>getCommandesByUser(@Path("username") String username);
 
     @POST("petties/add")
     Call<Pets> insertPet(@Body Pets p);
