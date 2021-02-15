@@ -10,6 +10,7 @@ import com.example.petines.petines.R;
 import com.example.petines.petines.Services.CommandeService;
 
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,7 +46,6 @@ public class LivraisonActivity extends AppCompatActivity{
         BtnOrder = findViewById(R.id.commande);
         username = getIntent().getStringExtra("username");
         pet = (Pets) getIntent().getSerializableExtra("pet");
-
 
 
 
